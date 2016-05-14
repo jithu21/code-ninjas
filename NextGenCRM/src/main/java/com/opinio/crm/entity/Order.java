@@ -29,6 +29,16 @@ public class Order {
 
     private int customerRating;
 
+    private int total;
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
     public int getCustomerRating() {
         return customerRating;
     }

@@ -2,15 +2,13 @@ package com.opinio.crm;
 
 
 import com.opinio.crm.config.Application;
-import com.opinio.crm.entity.Customer;
+import com.opinio.crm.repository.OrderDAO;
 import com.opinio.crm.service.CustomerService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.io.IOException;
 
 /**
  * Created by Vineet on 04/04/16.
@@ -26,17 +24,20 @@ public class TestConfiguration {
     @Autowired
     DataGenerator dataGenerator;
 
+    @Autowired
+    private OrderDAO orderDAO;
 
-    @Test
-    public void test() throws IOException {
-        Customer customer = new Customer();
-        customer.setFirstName("Vineet");
-        customerService.create(customer);
-    }
 
     @Test
     public void testDataGen() {
-        dataGenerator.generateData();
+        //dataGenerator.cleanData();
+        //dataGenerator.generateData();
+    }
+
+    @Test
+    public void testAggregation() {
+        orderDAO.getDayAggByTotalAmount();
+
     }
 
 

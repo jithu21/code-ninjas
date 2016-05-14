@@ -1,6 +1,6 @@
 package com.opinio.crm.repository;
 
-import com.opinio.crm.entity.*;
+import com.opinio.crm.entity.Order;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
