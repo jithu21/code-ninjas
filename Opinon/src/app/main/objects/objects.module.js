@@ -10,7 +10,7 @@
     function config($stateProvider,msNavigationServiceProvider)
     {
         $stateProvider.state('app.objects', {
-            url    : '/rhea/Objects',
+            url    : '/opinio/health',
             views  : {
                 'content@app': {
                     templateUrl: 'app/main/objects/objects.html',
@@ -19,7 +19,7 @@
             }
         });
       msNavigationServiceProvider.saveItem('fuse.objects', {
-        title : 'Objects',
+        title : 'Customer Health',
         icon  : 'icon-plus',
         state : 'app.objects'
       });

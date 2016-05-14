@@ -6,9 +6,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/index.config.js" afterPath="$PROJECT_DIR$/src/app/index.config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/index.route.js" afterPath="$PROJECT_DIR$/src/app/index.route.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/apps/dashboards/dashboards.module.js" afterPath="$PROJECT_DIR$/src/app/main/apps/dashboards/dashboards.module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.html" afterPath="$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.module.js" afterPath="$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.module.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/login/login.html" afterPath="$PROJECT_DIR$/src/app/main/login/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/login/login.module.js" afterPath="$PROJECT_DIR$/src/app/main/login/login.module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/objects/objects.controller.js" afterPath="$PROJECT_DIR$/src/app/main/objects/objects.controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/objects/objects.html" afterPath="$PROJECT_DIR$/src/app/main/objects/objects.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/objects/objects.module.js" afterPath="$PROJECT_DIR$/src/app/main/objects/objects.module.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/rules/rules.module.js" afterPath="$PROJECT_DIR$/src/app/main/rules/rules.module.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/s3/s3.html" afterPath="$PROJECT_DIR$/src/app/main/s3/s3.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/users/user.controller.js" afterPath="$PROJECT_DIR$/src/app/main/users/user.controller.js" />
@@ -57,13 +61,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/main/users/user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7352941">
-              <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+            <state vertical-scroll-proportion="-14.583333">
+              <caret line="65" column="50" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
               <folding>
-                <marker date="1463230065000" expanded="true" signature="114:741" placeholder="..." />
+                <marker date="1463230126000" expanded="true" signature="114:741" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard-server.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.4166665">
+              <caret line="268" column="94" selection-start-line="268" selection-start-column="94" selection-end-line="268" selection-end-column="94" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="objects.module.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/objects/objects.module.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="objects.controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/main/objects/objects.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.44602272">
+              <caret line="80" column="12" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="objects.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/main/objects/objects.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.625">
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,51 +137,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.constants.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/index.constants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/index.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.module.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/index.module.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="navigation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/navigation/layouts/horizontal-navigation/navigation.html">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="toolbar.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/toolbar/layouts/content-with-toolbar/toolbar.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.875">
-              <caret line="23" column="38" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -150,7 +156,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/app/main/s3/s3.html" />
-        <option value="$PROJECT_DIR$/src/app/main/objects/objects.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/login/login.html" />
         <option value="$PROJECT_DIR$/src/app/toolbar/toolbar.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/login/login.module.js" />
@@ -164,6 +169,10 @@
         <option value="$PROJECT_DIR$/src/app/main/users/user.module.js" />
         <option value="$PROJECT_DIR$/src/app/main/users/user.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/users/user.html" />
+        <option value="$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.html" />
+        <option value="$PROJECT_DIR$/src/app/main/objects/objects.module.js" />
+        <option value="$PROJECT_DIR$/src/app/main/objects/objects.html" />
+        <option value="$PROJECT_DIR$/src/app/main/objects/objects.controller.js" />
       </list>
     </option>
   </component>
@@ -305,6 +314,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rhea_UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Opinon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objects" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -530,30 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/objects/objects.module.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/objects/objects.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/objects/objects.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.25">
@@ -672,14 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.208334">
-          <caret line="287" column="49" selection-start-line="287" selection-start-column="42" selection-end-line="287" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -843,11 +846,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/users/user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7352941">
-          <caret line="75" column="37" selection-start-line="75" selection-start-column="37" selection-end-line="75" selection-end-column="37" />
+        <state vertical-scroll-proportion="-14.583333">
+          <caret line="65" column="50" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
           <folding>
-            <marker date="1463230065000" expanded="true" signature="114:741" placeholder="..." />
+            <marker date="1463230126000" expanded="true" signature="114:741" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.4166665">
+          <caret line="268" column="94" selection-start-line="268" selection-start-column="94" selection-end-line="268" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/objects/objects.module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/objects/objects.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.625">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/objects/objects.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44602272">
+          <caret line="80" column="12" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>

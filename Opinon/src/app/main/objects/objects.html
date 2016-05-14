@@ -3,7 +3,7 @@
     <!-- HEADER -->
   <div class="header md-accent-bg" layout="row" layout-align="space-between">
     <div layout="row" layout-align="space-between center">
-      <div  class="title">Objects</div>
+      <div  class="title">Customers Health</div>
       <div>&nbsp;</div>
       <div  style="margin-left:760px;" class="breadcrumb" layout="row" layout-align="start center">
         <md-icon md-font-icon="icon-home" class="s16"></md-icon>
@@ -16,50 +16,7 @@
 
     <!-- CONTENT -->
     <div class="content">
-
-        <div class="white-bg md-whiteframe-4dp">
-            <table class="dataTable row-border hover" datatable="ng" dt-options="vm.dtOptions">
-                <thead>
-                    <tr>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Object Name</span>
-                            </div>
-                        </th>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Source</span>
-                            </div>
-                        </th>
-                      <th class="secondary-text">
-                        <div class="table-header">
-                          <span class="column-title">Format</span>
-                        </div>
-                      </th>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Created By</span>
-                            </div>
-                        </th>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Created At</span>
-                            </div>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="object in ::vm.objects">
-                        <td>{{ object.name }}</td>
-                        <td>{{ object.source }}</td>
-                        <td>{{ object.format }}</td>
-                        <td>{{ object.createdBy }}</td>
-                        <td>{{ object.createdAt }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
+            <nvd3 options="vm.multiBarHorizontalChart.options"  data="vm.multiBarHorizontalChart.data"></nvd3>
     </div>
     <!-- / CONTENT -->
 
