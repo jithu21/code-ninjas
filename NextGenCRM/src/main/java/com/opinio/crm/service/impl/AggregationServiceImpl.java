@@ -57,9 +57,9 @@ public class AggregationServiceImpl implements AggregationService {
             budgetDayAgg.setCity(order.getCity());
             budgetDayAgg.setCustId(order.getCustomerId());
             budgetDayAgg.setOrderDate(order.getOrderDate());
-            if (order.getTotalPrice()<=300)
+            if (order.getTotal()<=300)
                 budgetDayAgg.setBudget(BudgetCategory.LOW);
-            else if (order.getTotalPrice()<=800)
+            else if (order.getTotal()<=800)
                 budgetDayAgg.setBudget(BudgetCategory.MEDIUM);
             else
                 budgetDayAgg.setBudget(BudgetCategory.HIGH);
