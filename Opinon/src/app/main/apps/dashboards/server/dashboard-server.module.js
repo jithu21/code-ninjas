@@ -23,10 +23,10 @@
                 {
                     return {
                       "widget1": {
-                        "title": "Events Dashboard",
+                        "title": "Customer/Orders Dashboard ",
                         "chart": [
                           {
-                            "key": "Total Events",
+                            "key": "Total Orders",
                             "values": [
                               {"x": 1, "y": 10000},
                               {"x": 2, "y": 12000},
@@ -41,7 +41,7 @@
                             ]
                           },
                           {
-                            "key": "Valid Events",
+                            "key": "Total Customers",
                             "values": [
                               {"x": 1, "y": 8000},
                               {"x": 2, "y": 9000},
@@ -54,45 +54,30 @@
                               {"x": 9, "y": 10000},
                               {"x": 10, "y": 5000}
                             ]
-                          },
-                          {
-                            "key": "Invalid Events",
-                            "values": [
-                              {"x": 1, "y": 2000},
-                              {"x": 2, "y": 3000},
-                              {"x": 3, "y": 3000},
-                              {"x": 4, "y": 500},
-                              {"x": 5, "y": 1500},
-                              {"x": 6, "y": 500},
-                              {"x": 7, "y": 3000},
-                              {"x": 8, "y": 1000},
-                              {"x": 9, "y": 2000},
-                              {"x": 10, "y": 2000}
-                            ]
                           }
                         ]
                       },
                       "widget2": {
-                        "title": "Total Events",
+                        "title": "Total Customers",
                         "value": {
-                          "used": "1.2 Million",
+                          "used": "0.15 Million",
                           "total": "",
                           "percentage": 67.45
                         },
-                        "detail": "This is the back side. You can show detailed information here."
+                        "detail": "Total Number of Customers."
                       },
                       "widget3": {
-                        "title": "Total Valid Events",
+                        "title": "Total orders",
                         "value": {
-                          "used": "0.8 Million",
+                          "used": "1.3 Million",
                           "total": "",
                           "percentage": 6.31
                         },
-                        "detail": "This is the back side. You can show detailed information here."
+                        "detail": "Total Number of Orders."
                       },
                       "widget4": {
-                        "title": "Total Invalid Events",
-                        "value": "0.4 Million",
+                        "title": "Total Active Customers",
+                        "value": "0.04 Million",
                         "footnote": "Higher than average",
                         "detail": "This is the back side. You can show detailed information here.",
                         "chart": [
@@ -105,8 +90,8 @@
                         ]
                       },
                       "widget5": {
-                        "title": "Today's Events",
-                        "value": "10k",
+                        "title": "Total Inactive Customers",
+                        "value": "0.11 Million",
                         "detail": "This is the back side. You can show detailed information here.",
                         "footnote": "Lower than average"
                       },
@@ -151,94 +136,94 @@
                         ]
                       },
                       "widget7": {
-                        "title": "Connector History",
+                        "title": "Campaign",
                         "table": {
                           "columns": [
                             {
-                              "title": "Object"
+                              "title": "Campaign Name"
                             },
                             {
-                              "title": "Connector"
+                              "title": "Location"
+                            },
+                            {
+                              "title": "Category"
                             },
                             {
                               "title": "Status"
-                            },
-                            {
-                              "title": "Time"
                             }
                           ],
                           "rows": [
                             [
                               {
-                                "value": "DailyMail",
+                                "value": "Buy 1 Get 1",
                                 "classes": "text-bold"
                               },
                               {
-                                "value": "s3",
+                                "value": "Karnataka",
                                 "classes": "text-boxed m-0 green-bg white-fg"
                               },
-                              {"value": "completed"},
-                              {"value": "24 mins"}
+                              {"value": "Italian"},
+                              {"value": "Running"}
                             ],
                             [
                               {
-                                "value": "cpdavd",
+                                "value": "20% Flat",
                                 "classes": "text-bold"
                               },
                               {
-                                "value": "s3",
+                                "value": "Gujarat",
                                 "classes": "text-boxed m-0 green-bg white-fg"
                               },
-                              {"value": "completed"},
-                              {"value": "30 mins"}
+                              {"value": "North"},
+                              {"value": "Running"}
                             ],
                             [
                               {
-                                "value": "cpsrvd",
+                                "value": "Super Sunday",
                                 "classes": "text-bold"
                               },
                               {
-                                "value": "s3",
+                                "value": "Bihar",
                                 "classes": "text-boxed m-0 green-bg white-fg"
                               },
-                              {"value": "completed"},
-                              {"value": "14 mins"}
+                              {"value": "North"},
+                              {"value": "Completed"}
                             ],
                             [
                               {
-                                "value": "crond",
+                                "value": "Wednesday Dhamaka",
                                 "classes": "text-bold"
                               },
                               {
-                                "value": "s3",
+                                "value": "Andhra",
                                 "classes": "text-boxed m-0 green-bg white-fg"
                               },
-                              {"value": "completed"},
-                              {"value": "12 mins"}
+                              {"value": "South"},
+                              {"value": "Completed"}
                             ],
                             [
                               {
-                                "value": "dnsadmin",
+                                "value": "Diwali",
                                 "classes": "text-bold"
                               },
                               {
-                                "value": "s3",
+                                "value": "ALL",
                                 "classes": "text-boxed m-0 green-bg white-fg"
                               },
-                              {"value": "completed"},
-                              {"value": "4 mins"}
+                              {"value": "North"},
+                              {"value": "Running"}
                             ],
                             [
                               {
-                                "value": "httpd",
+                                "value": "Valentines Day",
                                 "classes": "text-bold"
                               },
                               {
-                                "value": "mysql",
+                                "value": "ALL",
                                 "classes": "text-boxed m-0 deep-orange-bg white-fg"
                               },
-                              {"value": "completed"},
-                              {"value": "2 mins"}
+                              {"value": "South"},
+                              {"value": "Running"}
                             ]
                           ]
                         }
@@ -247,34 +232,34 @@
                         "title": "Activity",
                         "activities": [
                           {
-                            "process" : "Custom Aggregation Succeded - Dec 20",
+                            "process" : "Orders in Karnantaka",
                             "type": "Output",
                             "value": "100 %"
                           },
                           {
-                            "process" : "Aggregation Failed - Dec 17",
+                            "process" : "Orders in Andhra Pradesh",
                             "type": "Input",
                             "value": "10 %"
                           },
                           {
-                            "process" : "Aggregation Failed - Dec 16",
+                            "process" : "Orders in Punjab",
                             "type": "Input",
                             "value": "5 %"
                           },
                           {
-                            "process" : "Aggregation Succeded - Dec 16",
+                            "process" : "Orders in Gujarat",
                             "type": "Output",
                             "value": "100 %"
                           },
                           {
-                            "process" : "Aggregation Succeded - Dec 12",
+                            "process" : "Orders in Kerala",
                             "type": "Output",
-                            "value": "100 %"
+                            "value": "40 %"
                           },
                           {
-                            "process" : "Aggregation Succeded - Dec 12",
+                            "process" : "Orders in Madhya Pradesh",
                             "type": "Output",
-                            "value": "100 %"
+                            "value": "30 %"
                           }
                         ]
                       }
