@@ -3,10 +3,12 @@ package com.opinio.crm;
 
 import com.opinio.crm.config.Application;
 import com.opinio.crm.entity.AggregationType;
+import com.opinio.crm.repository.HealthDayAggDAO;
 import com.opinio.crm.repository.OrderDAO;
 import com.opinio.crm.service.AggregationService;
 import com.opinio.crm.service.CustomerService;
 import com.opinio.crm.service.OrderService;
+import com.opinio.crm.service.ReportService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,15 +36,18 @@ public class TestConfiguration {
     private AggregationService aggregationService;
 
 
-    /*@Test
+    @Autowired
+    ReportService reportService;
+    @Test
     public void testDataGen() {
         //dataGenerator.cleanData();
         //dataGenerator.generateData();
-    }*/
-
+    }
     @Test
     public void testAggregation() {
-        orderDAO.getDayAggByLocation();
+       // aggregationService.runAggregation(AggregationType.CUST_HEALTH);
+
+        reportService.getActiveCustomerCount();
 
         //aggregationService.runAggregation(AggregationType.FOOD_ORDERED);
 

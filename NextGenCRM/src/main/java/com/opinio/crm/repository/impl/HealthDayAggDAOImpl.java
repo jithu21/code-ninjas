@@ -24,7 +24,7 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
     private MongoTemplate mongoTemplate;
 
     @Override
-    public Map<String, String> orderCountByDate() {
+    public List<HashMap> orderCountByDate() {
         Aggregation agg = newAggregation(
                 group("orderDate").sum("1").as("totalCustomer").sum("noOfOrders").as("totalOrders"),
                 project("totalOrders", "totalCustomer", "orderDate"),
@@ -35,7 +35,7 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
         AggregationResults<HashMap> groupResults
                 = mongoTemplate.aggregate(agg, HealthDayAgg.class, HashMap.class);
         List<HashMap> result = groupResults.getMappedResults();
-        return (Map<String, String>) result;
+        return result;
 
     }
 
@@ -53,7 +53,7 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
         AggregationResults<HashMap> groupResults
                 = mongoTemplate.aggregate(agg, HealthDayAgg.class, HashMap.class);
         List<HashMap> result = groupResults.getMappedResults();
-        return Integer.parseInt((String) result.get(0).get("totalCustomer"));
+        return ((Integer) result.get(0).get("totalCustomer"));
 
     }
 }

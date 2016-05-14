@@ -46,15 +46,11 @@ public class DataGenerator {
 
     private List<ProductData> productDataList;
 
+
     public void generateData() {
-        generateCustomers();
-    }
-
-
-    private void generateCustomers() {
-        IntStream.range(1, 100).forEach(i -> customerService.create(getCustomer()));
+        //IntStream.range(1, 100).forEach(i -> customerService.create(getCustomer()));
         this.initCustomers();
-        IntStream.range(1, 12).forEach(i -> productService.save(getProduct()));
+        //IntStream.range(1, 12).forEach(i -> productService.save(getProduct()));
         this.initProducts();
         IntStream.range(1, 1000).forEach(i -> orderService.save(getOrder()));
 
@@ -131,6 +127,7 @@ public class DataGenerator {
     private Date getTodaysDate() {
         long millisInDay = 60 * 60 * 24 * 1000;
         long currentTime = new Date().getTime();
+        //currentTime = currentTime - millisInDay;
         long dateOnly = (currentTime / millisInDay) * millisInDay;
         Date clearDate = new Date(dateOnly);
         return clearDate;

@@ -1,11 +1,12 @@
 package com.opinio.crm.repository;
 
-import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by gainsight on 14/05/16.
  */
 public interface CustomHealthDayAggDAO {
-    Map<String, String> orderCountByDate();
+    List<HashMap> orderCountByDate();
     int getActiveCustomerCount(int n);
 }

@@ -57,13 +57,13 @@ public class ReportServiceImpl implements ReportService {
 
     @Override
     public Map<String, String> getCustomerOrderCount() {
-        return healthDayAggDAO.orderCountByDate();
+        return (Map<String, String>) healthDayAggDAO.orderCountByDate();
     }
 
     @Override
-    public Map<String, String> getActiveCustomerCount(){
-        int countlast7Days = healthDayAggDAO.getActiveCustomerCount(7);
-        int countlast14Days = healthDayAggDAO.getActiveCustomerCount(14);
+    public Map<String, String> getActiveCustomerCount() {
+        int countlast7Days = healthDayAggDAO.getActiveCustomerCount(-7);
+        int countlast14Days = healthDayAggDAO.getActiveCustomerCount(-14);
         Map<String, String> map = new HashMap<>();
         map.put("Last7Days", countlast7Days + "");
         map.put("Last14Days", countlast14Days + "");
