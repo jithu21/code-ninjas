@@ -1,10 +1,7 @@
 package com.opinio.crm.service.impl;
 
-import com.opinio.crm.entity.AggregationType;
-import com.opinio.crm.entity.BudgetCategory;
-import com.opinio.crm.entity.BudgetDayAgg;
-import com.opinio.crm.entity.Order;
-import com.opinio.crm.repository.OrderDAO;
+import com.opinio.crm.entity.*;
+import com.opinio.crm.repository.*;
 import com.opinio.crm.service.AggregationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +17,16 @@ public class AggregationServiceImpl implements AggregationService {
 
     @Autowired
     private OrderDAO orderDAO;
+    @Autowired
+    private BudgetDayAggDAO budgetDayAggDAO;
+    @Autowired
+    private FoodDayAggDAO foodDayAggDAO;
+    @Autowired
+    private HealthDayAggDAO healthDayAggDAO;
+    @Autowired
+    private LocationDayAggDAO locationDayAggDAO;
+    @Autowired
+    private SatisfactionDayAggDAO satisfactionDayAggDAO;
 
     public void runAggregation(AggregationType aggType) {
         switch (aggType){
@@ -38,12 +45,12 @@ public class AggregationServiceImpl implements AggregationService {
 
     private void performAggByBudget() {
         List<Order> dayAggOrder = orderDAO.getDayAggByTotalAmount();
-        LinkedList<BudgetDayAgg> budgetDayAggs = mapToBudgetDayAgg(dayAggOrder);
-
+        List<BudgetDayAgg> budgetDayAggs = mapToBudgetDayAgg(dayAggOrder);
+        budgetDayAggDAO.insert(budgetDayAggs);
     }
 
-    private LinkedList<BudgetDayAgg> mapToBudgetDayAgg(List<Order> dayAggOrder) {
-        LinkedList<BudgetDayAgg> budgetDayAggs = new LinkedList<>();
+    private List<BudgetDayAgg> mapToBudgetDayAgg(List<Order> dayAggOrder) {
+        List<BudgetDayAgg> budgetDayAggs = new LinkedList<>();
         BudgetDayAgg budgetDayAgg;
         for (Order order : dayAggOrder){
             budgetDayAgg = new BudgetDayAgg();
@@ -61,18 +68,22 @@ public class AggregationServiceImpl implements AggregationService {
     }
 
     private void performAggByFood() {
-
+        List<FoodDayAgg> foodDayAggs = orderDAO.getDayAggByFood();
+        foodDayAggDAO.insert(foodDayAggs);
     }
 
     private void performAggBySatisfaction() {
-
+        List<SatisfactionDayAgg> satisfactionDayAggs = orderDAO.getDayAggBySatisfaction();
+        satisfactionDayAggDAO.insert(satisfactionDayAggs);
     }
 
     private void performAggByHealth() {
-
+        List<HealthDayAgg> healthDayAggs = orderDAO.getDayAggByHealth();
+        healthDayAggDAO.insert(healthDayAggs);
     }
 
     private void performAggByLocation() {
-
+        List<LocationDayAgg> locationDayAggs = orderDAO.getDayAggByLocation();
+        locationDayAggDAO.insert(locationDayAggs);
     }
 }
