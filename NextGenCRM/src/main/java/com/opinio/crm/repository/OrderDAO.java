@@ -9,16 +9,8 @@ import java.util.List;
 /**
  * Created by Vineet on 14/05/16.
  */
-public interface OrderDAO extends MongoRepository<Order, String> {
+public interface OrderDAO extends MongoRepository<Order, String> ,CustomOrderDAO {
 
-    @Query("")
-    List<Order> getDayAggByTotalAmount();
 
-    List<FoodDayAgg> getDayAggByFood();
 
-    List<SatisfactionDayAgg> getDayAggBySatisfaction();
-
-    List<HealthDayAgg> getDayAggByHealth();
-
-    List<LocationDayAgg> getDayAggByLocation();
 }

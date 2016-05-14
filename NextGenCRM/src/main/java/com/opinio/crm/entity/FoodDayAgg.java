@@ -12,18 +12,24 @@ public class FoodDayAgg {
 
     @Id
     private String id;
-    private String custId;
+    private String customerId;
     @Indexed
     private Date orderDate;
     @Indexed
     private ProductCategory productCategory;
 
-    public String getCustId() {
-        return custId;
+    public FoodDayAgg(String customerId, Date orderDate, ProductCategory productCategory) {
+        this.customerId = customerId;
+        this.orderDate = orderDate;
+        this.productCategory = productCategory;
     }
 
-    public void setCustId(String custId) {
-        this.custId = custId;
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public Date getOrderDate() {

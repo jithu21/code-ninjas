@@ -11,7 +11,7 @@ import java.util.Date;
 public class LocationDayAgg {
     @Id
     private String id;
-    private String custId;
+    private String customerId;
     @Indexed
     private Date orderDate;
     @Indexed
@@ -19,12 +19,12 @@ public class LocationDayAgg {
     @Indexed
     private String area;
 
-    public String getCustId() {
-        return custId;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setCustId(String custId) {
-        this.custId = custId;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
     public Date getOrderDate() {

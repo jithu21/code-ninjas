@@ -2,8 +2,11 @@ package com.opinio.crm;
 
 
 import com.opinio.crm.config.Application;
+import com.opinio.crm.entity.AggregationType;
 import com.opinio.crm.repository.OrderDAO;
+import com.opinio.crm.service.AggregationService;
 import com.opinio.crm.service.CustomerService;
+import com.opinio.crm.service.OrderService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,16 +30,21 @@ public class TestConfiguration {
     @Autowired
     private OrderDAO orderDAO;
 
+    @Autowired
+    private AggregationService aggregationService;
 
-    @Test
+
+    /*@Test
     public void testDataGen() {
         //dataGenerator.cleanData();
         //dataGenerator.generateData();
-    }
+    }*/
 
     @Test
     public void testAggregation() {
-        orderDAO.getDayAggByTotalAmount();
+        orderDAO.getDayAggByLocation();
+
+        //aggregationService.runAggregation(AggregationType.FOOD_ORDERED);
 
     }
 
