@@ -5,6 +5,7 @@ import com.opinio.crm.entity.*;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Subhodeep on 14/05/16.
@@ -16,4 +17,5 @@ public interface ReportService {
     List<SatisfactionDayAgg> getCustomerSatisfaction(Date fromDate, Date toDate);
     List<BudgetDayAgg> getCustomerBudget(Date fromDate, Date toDate);
 
+    Map<String, String> getCustomerOrderCount();
 }

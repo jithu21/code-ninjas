@@ -49,4 +49,12 @@ public class ReportRestApi {
         return new ResponseEntity(reportService.getCustomerSatisfaction(fromDate, toDate), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/customerOrderCount", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity getCustomerOrderCount(){
+        return new ResponseEntity(reportService.getCustomerOrderCount(), HttpStatus.OK);
+    }
+
+
+
 }

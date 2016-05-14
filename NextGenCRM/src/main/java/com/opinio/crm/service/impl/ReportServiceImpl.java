@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Subhodeep on 14/05/16.
@@ -51,6 +52,11 @@ public class ReportServiceImpl implements ReportService {
     @Override
     public List<BudgetDayAgg> getCustomerBudget(Date fromDate, Date toDate) {
         return budgetDayAggDAO.findByOrderDateBetween(fromDate, toDate);
+    }
+
+    @Override
+    public Map<String, String> getCustomerOrderCount() {
+        return healthDayAggDAO.orderCountByDate();
     }
 
 
