@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.springframework.http.ResponseEntity.ok;
 
@@ -34,5 +35,19 @@ public class CampaignController {
 
     }
 
+
+    @RequestMapping(value = "/campaignByFoodCategory", method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Campaign> getCampaignByFoodCategory() {
+        return campaignService.getCampaignByFoodCategory();
+
+    }
+
+    @RequestMapping(value = "/campaignByLocation", method = RequestMethod.GET)
+    @ResponseBody
+    public Map<String, Campaign> getCampaignByLocation() {
+        return campaignService.getCampaignByLocation();
+
+    }
 
 }
