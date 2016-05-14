@@ -2,6 +2,7 @@ package com.opinio.crm.service;
 
 import com.opinio.crm.dto.GenericResponseDTO;
 import com.opinio.crm.entity.*;
+import org.springframework.util.MultiValueMap;
 
 import java.util.Date;
 import java.util.List;
@@ -18,4 +19,6 @@ public interface ReportService {
     List<BudgetDayAgg> getCustomerBudget(Date fromDate, Date toDate);
 
     Map<String, String> getCustomerOrderCount();
+
+    Map<String, String> getActiveCustomerCount();
 }

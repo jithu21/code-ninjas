@@ -55,6 +55,11 @@ public class ReportRestApi {
         return new ResponseEntity(reportService.getCustomerOrderCount(), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/activeCustomerCount", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity getActiveCustomerCount(){
+        return new ResponseEntity(reportService.getActiveCustomerCount(), HttpStatus.OK);
+    }
 
 
 }

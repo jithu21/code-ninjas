@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -57,6 +58,16 @@ public class ReportServiceImpl implements ReportService {
     @Override
     public Map<String, String> getCustomerOrderCount() {
         return healthDayAggDAO.orderCountByDate();
+    }
+
+    @Override
+    public Map<String, String> getActiveCustomerCount(){
+        int countlast7Days = healthDayAggDAO.getActiveCustomerCount(7);
+        int countlast14Days = healthDayAggDAO.getActiveCustomerCount(14);
+        Map<String, String> map = new HashMap<>();
+        map.put("Last7Days", countlast7Days + "");
+        map.put("Last14Days", countlast7Days + "");
+        return map;
     }
 
 

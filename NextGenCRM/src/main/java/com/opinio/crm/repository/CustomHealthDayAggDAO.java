@@ -7,5 +7,5 @@ import java.util.Map;
  */
 public interface CustomHealthDayAggDAO {
     Map<String, String> orderCountByDate();
-
+    int getActiveCustomerCount(int n);
 }
