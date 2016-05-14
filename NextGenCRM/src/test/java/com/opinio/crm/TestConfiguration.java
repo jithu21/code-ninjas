@@ -27,7 +27,7 @@ public class TestConfiguration {
     @Test
     public void test() throws IOException {
         Customer customer=new Customer();
-        customer.setName("Vineet");
+        customer.setFirstName("Vineet");
         customerService.create(customer);
     }
 
