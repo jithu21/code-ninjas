@@ -21,50 +21,56 @@ public class ReportRestApi {
 
     @RequestMapping(value = "/customerHealth/{fromDate}/{toDate}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity getCustomerHealth(@PathVariable @DateTimeFormat(pattern="ddMMyyyy") Date fromDate, @PathVariable @DateTimeFormat(pattern="ddMMyyyy") Date toDate){
+    public ResponseEntity getCustomerHealth(@PathVariable @DateTimeFormat(pattern = "ddMMyyyy") Date fromDate, @PathVariable @DateTimeFormat(pattern = "ddMMyyyy") Date toDate) {
         return new ResponseEntity(reportService.getCustomerHealth(fromDate, toDate), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/customerBudget/{fromDate}/{toDate}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity getCustomerBudget(@PathVariable @DateTimeFormat(pattern="ddMMyyyy") Date fromDate, @PathVariable @DateTimeFormat(pattern="ddMMyyyy") Date toDate){
+    public ResponseEntity getCustomerBudget(@PathVariable @DateTimeFormat(pattern = "ddMMyyyy") Date fromDate, @PathVariable @DateTimeFormat(pattern = "ddMMyyyy") Date toDate) {
         return new ResponseEntity(reportService.getCustomerBudget(fromDate, toDate), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/customerFoodCategory/{fromDate}/{toDate}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity getCustomerFoodCategory(@PathVariable @DateTimeFormat(pattern="ddMMyyyy") Date fromDate, @PathVariable @DateTimeFormat(pattern="ddMMyyyy") Date toDate){
+    public ResponseEntity getCustomerFoodCategory(@PathVariable @DateTimeFormat(pattern = "ddMMyyyy") Date fromDate, @PathVariable @DateTimeFormat(pattern = "ddMMyyyy") Date toDate) {
         return new ResponseEntity(reportService.getCustomerFoodCategory(fromDate, toDate), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/customerLocation/{fromDate}/{toDate}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity getCustomerLocation(@PathVariable @DateTimeFormat(pattern="ddMMyyyy") Date fromDate, @PathVariable @DateTimeFormat(pattern="ddMMyyyy") Date toDate){
+    public ResponseEntity getCustomerLocation(@PathVariable @DateTimeFormat(pattern = "ddMMyyyy") Date fromDate, @PathVariable @DateTimeFormat(pattern = "ddMMyyyy") Date toDate) {
         return new ResponseEntity(reportService.getCustomerLocation(fromDate, toDate), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/customerSatisfaction/{fromDate}/{toDate}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity getCustomerSatisfaction(@PathVariable @DateTimeFormat(pattern="ddMMyyyy") Date fromDate, @PathVariable @DateTimeFormat(pattern="ddMMyyyy") Date toDate){
+    public ResponseEntity getCustomerSatisfaction(@PathVariable @DateTimeFormat(pattern = "ddMMyyyy") Date fromDate, @PathVariable @DateTimeFormat(pattern = "ddMMyyyy") Date toDate) {
         return new ResponseEntity(reportService.getCustomerSatisfaction(fromDate, toDate), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/customerOrderCount", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity getCustomerOrderCount(){
+    public ResponseEntity getCustomerOrderCount() {
         return new ResponseEntity(reportService.getCustomerOrderCount(), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/activeCustomerCount", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity getActiveCustomerCount(){
+    public ResponseEntity getActiveCustomerCount() {
         return new ResponseEntity(reportService.getActiveCustomerCount(), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/ordersByFoodCategory", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity getOrdersByFoodCategory(){
+    public ResponseEntity getOrdersByFoodCategory() {
         return new ResponseEntity(reportService.getOrdersByFoodCategory(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/ordersBasedOnLocation", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity getOrdersBasedOnLocation() {
+        return new ResponseEntity(reportService.getLocationBasedOrderCount(), HttpStatus.OK);
     }
 
 

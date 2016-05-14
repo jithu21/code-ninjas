@@ -15,5 +15,7 @@ public interface CustomHealthDayAggDAO {
 
     List<HealthDayAggDAOImpl.OrderByLocation> getOrdersByLocation(int n);
 
+    List<HealthDayAggDAOImpl.OrderByLocation> getLocationBasedOrderCount(int n);
+
     Map<String,String> getOrdersByFoodCategory(int i);
 }

@@ -78,6 +78,25 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
 
     }
 
+    @Override
+    public List<OrderByLocation> getLocationBasedOrderCount(int n) {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, n);
+        Date startDate = cal.getTime();
+        Aggregation agg = newAggregation(
+                match(Criteria.where("orderDate").gt(startDate)),
+                group("city", "area").count().as("totalOrders"),
+                project("city", "area", "totalOrders"),
+                sort(Sort.Direction.DESC, "orderDate")
+        );
+
+        AggregationResults<OrderByLocation> groupResults
+                = mongoTemplate.aggregate(agg, LocationDayAgg.class, OrderByLocation.class);
+        List<OrderByLocation> result = groupResults.getMappedResults();
+        return result;
+
+    }
+
 
     public static class OrderByLocation {
 
@@ -120,9 +139,8 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
     }
 
 
-
     @Override
-    public Map<String,String> getOrdersByFoodCategory(int n){
+    public Map<String, String> getOrdersByFoodCategory(int n) {
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, n);
         Date startDate = cal.getTime();
@@ -137,10 +155,10 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
         AggregationResults<HashMap> groupResults
                 = mongoTemplate.aggregate(agg, FoodDayAgg.class, HashMap.class);
         List<HashMap> result = groupResults.getMappedResults();
-        Map<String,String> response = new HashMap<>();
+        Map<String, String> response = new HashMap<>();
 
-        for(Map map : result){
-            response.put((String)map.get("productCategory"),(String)map.get("totalOrder"));
+        for (Map map : result) {
+            response.put((String) map.get("productCategory"), (String) map.get("totalOrder"));
         }
         return response;
     }

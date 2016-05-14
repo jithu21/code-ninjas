@@ -1,12 +1,10 @@
 package com.opinio.crm.service.impl;
 
-import com.opinio.crm.dto.GenericResponseDTO;
 import com.opinio.crm.entity.*;
 import com.opinio.crm.repository.*;
 import com.opinio.crm.repository.impl.HealthDayAggDAOImpl;
 import com.opinio.crm.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -72,8 +70,21 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
+    public Map<String, List<HealthDayAggDAOImpl.OrderByLocation>> getLocationBasedOrderCount() {
+        List<HealthDayAggDAOImpl.OrderByLocation> countlast7Days =
+                healthDayAggDAO.getLocationBasedOrderCount(-7);
+        List<HealthDayAggDAOImpl.OrderByLocation> countlast14Days =
+                healthDayAggDAO.getLocationBasedOrderCount(-7);
+        Map<String, List<HealthDayAggDAOImpl.OrderByLocation>> map = new HashMap<>();
+        map.put("Last7Days", countlast7Days);
+        map.put("Last14Days", countlast14Days);
+        return map;
+    }
+
+    @Override
     public List<HealthDayAggDAOImpl.OrderByLocation> getOrderByLocation() {
-        List<HealthDayAggDAOImpl.OrderByLocation> countlast7Days = healthDayAggDAO.getOrdersByLocation(-7);
+        List<HealthDayAggDAOImpl.OrderByLocation> countlast7Days =
+                healthDayAggDAO.getOrdersByLocation(-7);
         return countlast7Days;
     }
 
