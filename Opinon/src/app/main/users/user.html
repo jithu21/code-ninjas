@@ -21,99 +21,59 @@
 
         <div class="price-table style-1 md-whiteframe-8dp" flex="45" layout="column">
           <div class="package-type md-primary-bg">
-            <span>BASIC</span>
+            <span>Customers based on Food</span>
           </div>
 
-          <div class="price" layout="row" layout-align="center start">
-            <div class="currency">$</div>
-            <div layout="row" layout-align="center end">
-              <div class="value">4</div>
-              <div class="period">/ month</div>
-            </div>
-          </div>
-
-          <md-divider></md-divider>
-
-          <div class="terms" layout="column">
-            <div class="term"><span class="text-bold">10</span> Projects</div>
-            <div class="term"><span class="text-bold">10</span> Pages</div>
-            <div class="term"><span class="text-bold">100</span> Mb Disk Space</div>
-          </div>
-
-          <md-button class="cta-button md-raised md-accent">BUY NOW</md-button>
+            <c3chart bindto-id="donut-plot1-chart">
+              <chart-column column-id="North"
+                            column-values="70"
+                            column-type="donut"/>
+              <chart-column column-id="South"
+                            column-values="35"
+                            column-type="donut"/>
+              <chart-column column-id="Italian"
+                            column-values="60"
+                            column-type="donut"/>
+              <chart-column column-id="American"
+                            column-values="60"
+                            column-type="donut"/>
+              <chart-donut title="Customers" width="60"/>
+            </c3chart>
         </div>
 
         <div class="price-table style-1 md-whiteframe-8dp"  flex="45" layout="column">
-          <div class="package-type md-primary-bg" layout="row" layout-align="space-between center">
-            <span>STANDARD</span>
-            <span class="sale md-accent-color md-hue-1">Save 15%</span>
+          <div class="package-type md-primary-bg">
+            <span>Customers based on Location</span>
           </div>
 
-          <div class="price" layout="row" layout-align="center start">
-            <div class="currency">$</div>
-            <div layout="row" layout-align="center end">
-              <div class="value">8</div>
-              <div class="period">/ month</div>
-            </div>
-          </div>
-
-          <md-divider></md-divider>
-
-          <div class="terms" layout="column">
-            <div class="term"><span class="text-bold">20</span> Projects</div>
-            <div class="term"><span class="text-bold">20</span> Pages</div>
-            <div class="term"><span class="text-bold">200</span> Mb Disk Space</div>
-          </div>
-
-          <md-button class="cta-button md-raised md-accent">BUY NOW</md-button>
+          <c3chart bindto-id="donut-plot2-chart">
+            <chart-column column-id="Karnataka"
+                          column-values="70"
+                          column-type="donut"/>
+            <chart-column column-id="Andhra Pradesh"
+                          column-values="35"
+                          column-type="donut"/>
+            <chart-column column-id="Madhya Pradesh"
+                          column-values="60"
+                          column-type="donut"/>
+            <chart-column column-id="Kerala"
+                          column-values="60"
+                          column-type="donut"/>
+            <chart-donut title="Customers" width="60"/>
+          </c3chart>
         </div>
         <div class="price-table style-1 md-whiteframe-8dp" flex="45" layout="column">
           <div class="package-type md-primary-bg">
-            <span>BASIC</span>
+            <span>Promotions based on Food</span>
           </div>
-
-          <div class="price" layout="row" layout-align="center start">
-            <div class="currency">$</div>
-            <div layout="row" layout-align="center end">
-              <div class="value">4</div>
-              <div class="period">/ month</div>
-            </div>
-          </div>
-
-          <md-divider></md-divider>
-
-          <div class="terms" layout="column">
-            <div class="term"><span class="text-bold">10</span> Projects</div>
-            <div class="term"><span class="text-bold">10</span> Pages</div>
-            <div class="term"><span class="text-bold">100</span> Mb Disk Space</div>
-          </div>
-
-          <md-button class="cta-button md-raised md-accent">BUY NOW</md-button>
+            <nvd3 options="vm.pieChart.options" data="vm.pieChart.data"></nvd3>
         </div>
 
         <div class="price-table style-1 md-whiteframe-8dp"  flex="45" layout="column">
-          <div class="package-type md-primary-bg" layout="row" layout-align="space-between center">
-            <span>STANDARD</span>
-            <span class="sale md-accent-color md-hue-1">Save 15%</span>
+          <div class="package-type md-primary-bg">
+            <span>Promotions based on Location</span>
           </div>
-
-          <div class="price" layout="row" layout-align="center start">
-            <div class="currency">$</div>
-            <div layout="row" layout-align="center end">
-              <div class="value">8</div>
-              <div class="period">/ month</div>
-            </div>
-          </div>
-
-          <md-divider></md-divider>
-
-          <div class="terms" layout="column">
-            <div class="term"><span class="text-bold">20</span> Projects</div>
-            <div class="term"><span class="text-bold">20</span> Pages</div>
-            <div class="term"><span class="text-bold">200</span> Mb Disk Space</div>
-          </div>
-
-          <md-button class="cta-button md-raised md-accent">BUY NOW</md-button>
+          <nvd3 options="vm.pieChart1.options" data="vm.pieChart1.data"></nvd3>
         </div>
 
       </div>

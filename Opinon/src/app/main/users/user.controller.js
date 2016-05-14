@@ -30,8 +30,107 @@
             autoWidth : false,
             responsive: true
         };
+      vm.pieChart = {
+        options: {
+          chart: {
+            type              : 'pieChart',
+            height            : 500,
+            x                 : function (d)
+            {
+              return d.key;
+            },
+            y                 : function (d)
+            {
+              return d.y;
+            },
+            showLabels        : true,
+            transitionDuration: 500,
+            labelThreshold    : 0.01,
+            legend            : {
+              margin: {
+                top   : 5,
+                right : 35,
+                bottom: 5,
+                left  : 0
+              }
+            }
+          }
+        },
+        data   : [
+          {
+            key: 'North',
+            y  : 20
+          },
+          {
+            key: 'South',
+            y  : 30
+          },
+          {
+            key: 'Italian',
+            y  : 10
+          },
+          {
+            key: 'Chineese',
+            y  : 5
+          },
+          {
+            key: 'American',
+            y  : 20
+          }
+        ]
+      };
+      vm.pieChart1 = {
+        options: {
+          chart: {
+            type              : 'pieChart',
+            height            : 500,
+            x                 : function (d)
+            {
+              return d.key;
+            },
+            y                 : function (d)
+            {
+              return d.y;
+            },
+            showLabels        : true,
+            transitionDuration: 500,
+            labelThreshold    : 0.01,
+            legend            : {
+              margin: {
+                top   : 5,
+                right : 35,
+                bottom: 5,
+                left  : 0
+              }
+            }
+          }
+        },
+        data   : [
+          {
+            key: 'Karnataka',
+            y  : 20
+          },
+          {
+            key: 'Tamil Nadu',
+            y  : 30
+          },
+          {
+            key: 'Kerala',
+            y  : 10
+          },
+          {
+            key: 'Delhi',
+            y  : 5
+          },
+          {
+            key: 'Maharastra',
+            y  : 20
+          }
+        ]
+      };
 
-        // Methods
+
+      // Methods
 
         //////////
     }
