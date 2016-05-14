@@ -105,8 +105,6 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
     }
 
 
-
-
     @Override
     public Map<String, String> getOrdersByFoodCategory(int n) {
         Calendar cal = Calendar.getInstance();
@@ -156,8 +154,7 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
         Aggregation agg = newAggregation(
                 match(Criteria.where("orderDate").gt(startDate)),
                 group("city", "area").count().as("totalOrders"),
-                project("city", "area", "totalOrders"),
-                sort(Sort.Direction.DESC, "orderDate")
+                project("city", "area", "totalOrders")
         );
 
         AggregationResults<OrderByLocation> groupResults

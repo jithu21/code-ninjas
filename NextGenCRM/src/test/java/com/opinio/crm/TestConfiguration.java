@@ -45,9 +45,9 @@ public class TestConfiguration {
     }
     @Test
     public void testAggregation() {
-        aggregationService.runAggregation(AggregationType.CUST_LOCATION);
+        //aggregationService.runAggregation(AggregationType.CUST_LOCATION);
 
-        reportService.getOrderByLocation();
+        reportService.getHealthBasedOnLocation();
 
         //aggregationService.runAggregation(AggregationType.FOOD_ORDERED);
 

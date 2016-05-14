@@ -7,8 +7,24 @@ import com.opinio.crm.entity.BudgetCategory;
  */
 public class UserLocationBudgetDTO {
     private String city;
-    private int noOfCustomers;
-    private BudgetCategory category;
+    private int totalCustomer;
+    private BudgetCategory budget;
+
+    public int getTotalCustomer() {
+        return totalCustomer;
+    }
+
+    public void setTotalCustomer(int totalCustomer) {
+        this.totalCustomer = totalCustomer;
+    }
+
+    public BudgetCategory getBudget() {
+        return budget;
+    }
+
+    public void setBudget(BudgetCategory budget) {
+        this.budget = budget;
+    }
 
     public String getCity() {
         return city;
@@ -18,19 +34,4 @@ public class UserLocationBudgetDTO {
         this.city = city;
     }
 
-    public int getNoOfCustomers() {
-        return noOfCustomers;
-    }
-
-    public void setNoOfCustomers(int noOfCustomers) {
-        this.noOfCustomers = noOfCustomers;
-    }
-
-    public BudgetCategory getCategory() {
-        return category;
-    }
-
-    public void setCategory(BudgetCategory category) {
-        this.category = category;
-    }
 }
