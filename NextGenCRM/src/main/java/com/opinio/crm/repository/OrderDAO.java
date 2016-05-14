@@ -1,7 +1,5 @@
 package com.opinio.crm.repository;
 
-import com.opinio.crm.entity.BudgetDayAgg;
-import com.opinio.crm.entity.Customer;
 import com.opinio.crm.entity.Order;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;

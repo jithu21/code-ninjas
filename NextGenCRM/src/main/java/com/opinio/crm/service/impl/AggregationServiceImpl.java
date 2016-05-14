@@ -55,8 +55,9 @@ public class AggregationServiceImpl implements AggregationService {
                 budgetDayAgg.setBudget(BudgetCategory.MEDIUM);
             else
                 budgetDayAgg.setBudget(BudgetCategory.HIGH);
+            budgetDayAggs.add(budgetDayAgg);
         }
-        return null;
+        return budgetDayAggs;
     }
 
     private void performAggByFood() {
