@@ -10,7 +10,7 @@
     function config($stateProvider,msNavigationServiceProvider)
     {
         $stateProvider.state('app.rules', {
-            url    : '/rhea/rules',
+            url    : '/opinio/compaignManager',
             views  : {
                 'content@app': {
                     templateUrl: 'app/main/rules/rules.html',

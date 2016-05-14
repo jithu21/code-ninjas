@@ -10,63 +10,32 @@
     function RulesController()
     {
         var vm = this;
+        vm.location = true;
 
-        // Data
 
-        vm.rules = [{ "rulename":"Not greater than 10",
-                       "objectname":"Temperature",
-                        "source":"FTP", "field":"Temperatue", "createdBy":"Jithendranath Gupta", "createdAt":"2015/12/10"},
-          { "rulename":"Not less than 0",
-            "objectname":"Temperature",
-            "source":"FTP", "field":"Temperatue", "createdBy":"Vivek", "createdAt":"2015/12/11"},
-          { "rulename":"Not Equals Rahul",
-            "objectname":"Account",
-            "source":"s3", "field":"Account Name", "createdBy":"Jithendranath Gupta", "createdAt":"2015/12/13"},
-          { "rulename":"Equals Ganesh",
-            "objectname":"Account",
-            "source":"FTP", "field":"Account Name", "createdBy":"Prasath Venkatraman", "createdAt":"2015/12/14"},
-          { "rulename":"Not Equals false",
-            "objectname":"Account",
-            "source":"FTP", "field":"Sex", "createdBy":"Ramu krupar", "createdAt":"2015/12/15"},
-          { "rulename":"Not Greater than 1000",
-            "objectname":"Elevation",
-            "source":"Others", "field":"Height", "createdBy":"Jithendranath Gupta", "createdAt":"2015/12/16"},
-          { "rulename":"Pressure less than 50 ",
-            "objectname":"Gas",
-            "source":"Others", "field":"Pressure", "createdBy":"Vishal", "createdAt":"2015/12/10"},
-          { "rulename":"Matched DNA",
-            "objectname":"DNA",
-            "source":"FTP", "field":"DNA name", "createdBy":"Jithendranath Gupta", "createdAt":"2015/12/10"},
-          { "rulename":"Bids Greater than 10",
-            "objectname":"Daily Mail",
-            "source":"FTP", "field":"Bid rate", "createdBy":"Gerard", "createdAt":"2015/12/10"},
-          { "rulename":"Clear Price greater than 0",
-            "objectname":"Daily Mail",
-            "source":"Others", "field":"Clear price", "createdBy":"Jithendranath Gupta", "createdAt":"2015/12/14"},
-          { "rulename":"Not greater Than 0",
-            "objectname":"Temperature",
-            "source":"FTP", "field":"Temperatue", "createdBy":"Jithendranath Gupta", "createdAt":"2015/12/10"},
-          { "rulename":"Not greater Than 0",
-            "objectname":"Temperature",
-            "source":"FTP", "field":"Temperatue", "createdBy":"Jithendranath Gupta", "createdAt":"2015/12/10"},
-          { "rulename":"Not greater Than 0",
-            "objectname":"Temperature",
-            "source":"FTP", "field":"Temperatue", "createdBy":"Jithendranath Gupta", "createdAt":"2015/12/10"},
-          { "rulename":"Not greater Than 0",
-            "objectname":"Temperature",
-            "source":"FTP", "field":"Temperatue", "createdBy":"Jithendranath Gupta", "createdAt":"2015/12/10"}
-        ];
-
-        vm.dtOptions = {
-            dom       : '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
-            pagingType: 'simple',
-            autoWidth : false,
-            responsive: true
-        };
 
         // Methods
 
-        //////////
+        vm.loadUsers = function(event){
+           vm.users =[{"name":"Food"},{"name":"Location"},{"name":"Active"},{"name":"Inactive"}];
+        }
+
+      // method to fetch varities under category items
+
+        vm.fetchVarirties = function () {
+          vm.varityItems = [{"variety_name":"varity1"},{"variety_name":"varity2"},{"variety_name":"varity3"}];
+        }
+
+        vm.listCountries = function(){
+          vm.countries = [{"name":"Gujarat"},{"name":"Pakistan"},{"name":"China"}];
+        }
+        vm.listTypeofUsers=function(){
+          vm.userType = [{"type":"List1"},{"type":"List2"},{"type":"List3"},{"type":"List5"},{"type":"List6"},{"type":"List7"}];
+        }
+        vm.schdulerDetails = function () {
+          vm.schduleType = [{"type":"Run Now"},{"type":"Run Weekly"},{"type":"Run Monthly"},{"type":"Run Everyday"},{"type":"Custom Schdule"}]
+        }
+
     }
 
 })();
