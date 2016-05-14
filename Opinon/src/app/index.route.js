@@ -11,7 +11,7 @@
     {
         $locationProvider.html5Mode(true);
 
-        $urlRouterProvider.otherwise('/rhea/login');
+        $urlRouterProvider.otherwise('/opinio/login');
 
         // State definitions
         $stateProvider

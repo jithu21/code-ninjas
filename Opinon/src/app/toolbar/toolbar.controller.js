@@ -100,7 +100,7 @@
          */
         function logout()
         {
-            $location.path('/rhea/login')
+            $location.path('/opinio/login')
         }
 
         /**

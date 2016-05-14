@@ -11,7 +11,7 @@
     {
         // State
         $stateProvider.state('app.login', {
-            url      : '/rhea/login',
+            url      : '/opinio/login',
             views    : {
                 'main@'                          : {
                     templateUrl: 'app/core/layouts/content-only.html',
