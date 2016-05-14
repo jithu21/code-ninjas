@@ -1,6 +1,7 @@
 package com.opinio.crm.service;
 
 import com.opinio.crm.dto.GenericResponseDTO;
+import com.opinio.crm.dto.OrderByLocation;
 import com.opinio.crm.dto.UserLocationBudgetDTO;
 import com.opinio.crm.entity.*;
 import com.opinio.crm.repository.impl.HealthDayAggDAOImpl;
@@ -23,11 +24,13 @@ public interface ReportService {
 
     Map<String, String> getActiveCustomerCount();
 
-    Map<String, List<HealthDayAggDAOImpl.OrderByLocation>> getLocationBasedOrderCount();
+    Map<String, List<OrderByLocation>> getLocationBasedOrderCount();
 
-    List<HealthDayAggDAOImpl.OrderByLocation> getOrderByLocation();
+    List<OrderByLocation> getOrderByLocation();
 
     Map<String, String> getOrdersByFoodCategory();
 
     List<UserLocationBudgetDTO> getUserLocationBudget();
+
+    List<OrderByLocation> getHealthBasedOnLocation();
 }

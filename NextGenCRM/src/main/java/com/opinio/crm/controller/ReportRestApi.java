@@ -73,6 +73,13 @@ public class ReportRestApi {
         return new ResponseEntity(reportService.getLocationBasedOrderCount(), HttpStatus.OK);
     }
 
+
+    @RequestMapping(value = "/healthBasedOnLocation", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity getHealthBasedOnLocation() {
+        return new ResponseEntity(reportService.getHealthBasedOnLocation(), HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/userLocationBudget", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity getUserLocationBudget(){

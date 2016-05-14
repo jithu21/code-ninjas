@@ -1,5 +1,6 @@
 package com.opinio.crm.repository.impl;
 
+import com.opinio.crm.dto.OrderByLocation;
 import com.opinio.crm.dto.UserLocationBudgetDTO;
 import com.opinio.crm.entity.BudgetDayAgg;
 import com.opinio.crm.entity.FoodDayAgg;
@@ -104,45 +105,6 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
     }
 
 
-    public static class OrderByLocation {
-
-        private String city;
-        private String area;
-        private Date orderDate;
-        private long totalOrders;
-
-        public String getCity() {
-            return city;
-        }
-
-        public void setCity(String city) {
-            this.city = city;
-        }
-
-        public String getArea() {
-            return area;
-        }
-
-        public void setArea(String area) {
-            this.area = area;
-        }
-
-        public Date getOrderDate() {
-            return orderDate;
-        }
-
-        public void setOrderDate(Date orderDate) {
-            this.orderDate = orderDate;
-        }
-
-        public long getTotalOrders() {
-            return totalOrders;
-        }
-
-        public void setTotalOrders(long totalOrders) {
-            this.totalOrders = totalOrders;
-        }
-    }
 
 
     @Override
@@ -176,13 +138,31 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
         Date startDate = cal.getTime();
         Aggregation agg = newAggregation(
                 match(Criteria.where("orderDate").gt(startDate)),
-                group("city","budget").count().as("totalCustomer"),
+                group("city", "budget").count().as("totalCustomer"),
                 project("totalCustomer", "city", "budget")
         );
 
         AggregationResults<UserLocationBudgetDTO> groupResults
                 = mongoTemplate.aggregate(agg, BudgetDayAgg.class, UserLocationBudgetDTO.class);
         List<UserLocationBudgetDTO> result = groupResults.getMappedResults();
+        return result;
+    }
+
+    @Override
+    public List<OrderByLocation> getHealthBasedOnLocation(int n) {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, n);
+        Date startDate = cal.getTime();
+        Aggregation agg = newAggregation(
+                match(Criteria.where("orderDate").gt(startDate)),
+                group("city", "area").count().as("totalOrders"),
+                project("city", "area", "totalOrders"),
+                sort(Sort.Direction.DESC, "orderDate")
+        );
+
+        AggregationResults<OrderByLocation> groupResults
+                = mongoTemplate.aggregate(agg, LocationDayAgg.class, OrderByLocation.class);
+        List<OrderByLocation> result = groupResults.getMappedResults();
         return result;
     }
 
