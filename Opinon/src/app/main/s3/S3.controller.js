@@ -237,6 +237,15 @@
         responsive: true
       };
 
+      vm.lineChart = {
+        labels: ['Karnataka', 'Maharastra', 'Kerala', 'Andhra Pradesh', 'Telangana'],
+        series: ['Top', 'Middle', 'Low'],
+        data  : [
+          [65, 59, 80, 81, 56, 55, 40],
+          [28, 48, 40, 19, 86, 27, 90],
+          [20, 43, 50, 19, 46, 7, 80]
+        ]
+      };
 
         // Methods
         vm.sendForm = sendForm;

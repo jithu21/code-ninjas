@@ -31,7 +31,7 @@
     function config($stateProvider,msNavigationServiceProvider)
     {
         $stateProvider.state('app.s3', {
-            url      : '/rhea/connectors',
+            url      : '/opinio/customers',
             views    : {
                 'content@app': {
                     templateUrl: 'app/main/s3/s3.html',
