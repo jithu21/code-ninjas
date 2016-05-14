@@ -3,6 +3,7 @@ package com.opinio.crm.service.impl;
 import com.opinio.crm.dto.GenericResponseDTO;
 import com.opinio.crm.entity.*;
 import com.opinio.crm.repository.*;
+import com.opinio.crm.repository.impl.HealthDayAggDAOImpl;
 import com.opinio.crm.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.repository.Query;
@@ -69,6 +70,13 @@ public class ReportServiceImpl implements ReportService {
         map.put("Last14Days", countlast14Days + "");
         return map;
     }
+
+    @Override
+    public List<HealthDayAggDAOImpl.OrderByLocation> getOrderByLocation() {
+        List<HealthDayAggDAOImpl.OrderByLocation> countlast7Days = healthDayAggDAO.getOrdersByLocation(-7);
+        return countlast7Days;
+    }
+
 
     @Override
     public Map<String, String> getOrdersByFoodCategory() {

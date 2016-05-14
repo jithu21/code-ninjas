@@ -2,7 +2,7 @@ package com.opinio.crm.service;
 
 import com.opinio.crm.dto.GenericResponseDTO;
 import com.opinio.crm.entity.*;
-import org.springframework.util.MultiValueMap;
+import com.opinio.crm.repository.impl.HealthDayAggDAOImpl;
 
 import java.util.Date;
 import java.util.List;
@@ -21,6 +21,8 @@ public interface ReportService {
     Map<String, String> getCustomerOrderCount();
 
     Map<String, String> getActiveCustomerCount();
+
+    List<HealthDayAggDAOImpl.OrderByLocation> getOrderByLocation();
 
     Map<String, String> getOrdersByFoodCategory();
 }

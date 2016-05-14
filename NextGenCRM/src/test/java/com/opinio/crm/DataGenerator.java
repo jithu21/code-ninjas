@@ -27,6 +27,9 @@ import static java.util.Arrays.asList;
 @Service
 public class DataGenerator {
 
+
+    private static int date=0;
+
     @Autowired
     private CustomerService customerService;
 
@@ -127,7 +130,7 @@ public class DataGenerator {
     private Date getTodaysDate() {
         long millisInDay = 60 * 60 * 24 * 1000;
         long currentTime = new Date().getTime();
-        //currentTime = currentTime - millisInDay;
+        currentTime = currentTime - millisInDay*date;
         long dateOnly = (currentTime / millisInDay) * millisInDay;
         Date clearDate = new Date(dateOnly);
         return clearDate;

@@ -2,6 +2,7 @@ package com.opinio.crm.repository.impl;
 
 import com.opinio.crm.entity.FoodDayAgg;
 import com.opinio.crm.entity.HealthDayAgg;
+import com.opinio.crm.entity.LocationDayAgg;
 import com.opinio.crm.repository.CustomHealthDayAggDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -57,6 +58,68 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
         return ((Integer) result.get(0).get("totalCustomer"));
 
     }
+
+    @Override
+    public List<OrderByLocation> getOrdersByLocation(int n) {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, n);
+        Date startDate = cal.getTime();
+        Aggregation agg = newAggregation(
+                match(Criteria.where("orderDate").gt(startDate)),
+                group("city", "area", "orderDate").count().as("totalOrders"),
+                project("city", "area", "orderDate", "totalOrders"),
+                sort(Sort.Direction.DESC, "orderDate")
+        );
+
+        AggregationResults<OrderByLocation> groupResults
+                = mongoTemplate.aggregate(agg, LocationDayAgg.class, OrderByLocation.class);
+        List<OrderByLocation> result = groupResults.getMappedResults();
+        return result;
+
+    }
+
+
+    public static class OrderByLocation {
+
+        private String city;
+        private String area;
+        private Date orderDate;
+        private long totalOrders;
+
+        public String getCity() {
+            return city;
+        }
+
+        public void setCity(String city) {
+            this.city = city;
+        }
+
+        public String getArea() {
+            return area;
+        }
+
+        public void setArea(String area) {
+            this.area = area;
+        }
+
+        public Date getOrderDate() {
+            return orderDate;
+        }
+
+        public void setOrderDate(Date orderDate) {
+            this.orderDate = orderDate;
+        }
+
+        public long getTotalOrders() {
+            return totalOrders;
+        }
+
+        public void setTotalOrders(long totalOrders) {
+            this.totalOrders = totalOrders;
+        }
+    }
+
+
 
     @Override
     public Map<String,String> getOrdersByFoodCategory(int n){
