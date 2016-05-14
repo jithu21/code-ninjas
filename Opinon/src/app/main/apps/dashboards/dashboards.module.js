@@ -32,7 +32,7 @@
         //});
 
         msNavigationServiceProvider.saveItem('apps.dashboards.server', {
-            title: 'Data',
+            title: 'Customer Insights',
             state: 'app.dashboards_server'
         });
 

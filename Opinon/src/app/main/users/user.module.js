@@ -10,7 +10,7 @@
     function config($stateProvider,msNavigationServiceProvider)
     {
         $stateProvider.state('app.user', {
-            url    : '/rhea/users',
+            url    : '/opinio/customermanagement',
             views  : {
                 'content@app': {
                     templateUrl: 'app/main/users/user.html',

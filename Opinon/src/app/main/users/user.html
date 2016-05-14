@@ -1,58 +1,122 @@
 <div id="simple-table" class="page-layout simple fullwidth doc-page element-doc-page">
 
     <!-- HEADER -->
-  <div class="header md-accent-bg" layout="row" layout-align="space-between">
-    <div layout="row" layout-align="space-between center">
-      <div  class="title">Users</div>
-      <div>&nbsp;</div>
-      <div  style="margin-left:820px;" class="breadcrumb" layout="row" layout-align="start center">
-        <md-icon md-font-icon="icon-home" class="s16"></md-icon>
-        <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
-        <span class="parent">Users</span>
-      </div>
-    </div>
-  </div>
+  <!--<div class="header md-accent-bg" layout="row" layout-align="space-between">-->
+    <!--<div layout="row" layout-align="space-between center">-->
+      <!--&lt;!&ndash;<div  class="title">Customer Management</div>&ndash;&gt;-->
+      <!--<div>&nbsp;</div>-->
+      <!--<div  style="margin-left:820px;" class="breadcrumb" layout="row" layout-align="start center">-->
+        <!--<md-icon md-font-icon="icon-home" class="s16"></md-icon>-->
+        <!--<md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>-->
+        <!--<span class="parent">Users</span>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
     <!-- / HEADER -->
 
     <!-- CONTENT -->
     <div class="content">
 
-        <div class="white-bg md-whiteframe-4dp">
-            <table class="dataTable row-border hover" datatable="ng" dt-options="vm.dtOptions">
-                <thead>
-                    <tr>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Name</span>
-                            </div>
-                        </th>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Role</span>
-                            </div>
-                        </th>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Created By</span>
-                            </div>
-                        </th>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Created At</span>
-                            </div>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="employee in ::vm.users">
-                        <td>{{ employee.name }}</td>
-                        <td>{{ employee.role }}</td>
-                        <td>{{ employee.createdBy }}</td>
-                        <td>{{ employee.createdAt }}</td>
-                    </tr>
-                </tbody>
-            </table>
+      <div class="price-tables" flex layout="row" layout-wrap>
+
+        <div class="price-table style-1 md-whiteframe-8dp" flex="45" layout="column">
+          <div class="package-type md-primary-bg">
+            <span>BASIC</span>
+          </div>
+
+          <div class="price" layout="row" layout-align="center start">
+            <div class="currency">$</div>
+            <div layout="row" layout-align="center end">
+              <div class="value">4</div>
+              <div class="period">/ month</div>
+            </div>
+          </div>
+
+          <md-divider></md-divider>
+
+          <div class="terms" layout="column">
+            <div class="term"><span class="text-bold">10</span> Projects</div>
+            <div class="term"><span class="text-bold">10</span> Pages</div>
+            <div class="term"><span class="text-bold">100</span> Mb Disk Space</div>
+          </div>
+
+          <md-button class="cta-button md-raised md-accent">BUY NOW</md-button>
         </div>
+
+        <div class="price-table style-1 md-whiteframe-8dp"  flex="45" layout="column">
+          <div class="package-type md-primary-bg" layout="row" layout-align="space-between center">
+            <span>STANDARD</span>
+            <span class="sale md-accent-color md-hue-1">Save 15%</span>
+          </div>
+
+          <div class="price" layout="row" layout-align="center start">
+            <div class="currency">$</div>
+            <div layout="row" layout-align="center end">
+              <div class="value">8</div>
+              <div class="period">/ month</div>
+            </div>
+          </div>
+
+          <md-divider></md-divider>
+
+          <div class="terms" layout="column">
+            <div class="term"><span class="text-bold">20</span> Projects</div>
+            <div class="term"><span class="text-bold">20</span> Pages</div>
+            <div class="term"><span class="text-bold">200</span> Mb Disk Space</div>
+          </div>
+
+          <md-button class="cta-button md-raised md-accent">BUY NOW</md-button>
+        </div>
+        <div class="price-table style-1 md-whiteframe-8dp" flex="45" layout="column">
+          <div class="package-type md-primary-bg">
+            <span>BASIC</span>
+          </div>
+
+          <div class="price" layout="row" layout-align="center start">
+            <div class="currency">$</div>
+            <div layout="row" layout-align="center end">
+              <div class="value">4</div>
+              <div class="period">/ month</div>
+            </div>
+          </div>
+
+          <md-divider></md-divider>
+
+          <div class="terms" layout="column">
+            <div class="term"><span class="text-bold">10</span> Projects</div>
+            <div class="term"><span class="text-bold">10</span> Pages</div>
+            <div class="term"><span class="text-bold">100</span> Mb Disk Space</div>
+          </div>
+
+          <md-button class="cta-button md-raised md-accent">BUY NOW</md-button>
+        </div>
+
+        <div class="price-table style-1 md-whiteframe-8dp"  flex="45" layout="column">
+          <div class="package-type md-primary-bg" layout="row" layout-align="space-between center">
+            <span>STANDARD</span>
+            <span class="sale md-accent-color md-hue-1">Save 15%</span>
+          </div>
+
+          <div class="price" layout="row" layout-align="center start">
+            <div class="currency">$</div>
+            <div layout="row" layout-align="center end">
+              <div class="value">8</div>
+              <div class="period">/ month</div>
+            </div>
+          </div>
+
+          <md-divider></md-divider>
+
+          <div class="terms" layout="column">
+            <div class="term"><span class="text-bold">20</span> Projects</div>
+            <div class="term"><span class="text-bold">20</span> Pages</div>
+            <div class="term"><span class="text-bold">200</span> Mb Disk Space</div>
+          </div>
+
+          <md-button class="cta-button md-raised md-accent">BUY NOW</md-button>
+        </div>
+
+      </div>
 
     </div>
     <!-- / CONTENT -->
