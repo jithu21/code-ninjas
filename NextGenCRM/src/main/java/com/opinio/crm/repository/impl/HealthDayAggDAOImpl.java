@@ -1,5 +1,7 @@
 package com.opinio.crm.repository.impl;
 
+import com.opinio.crm.dto.UserLocationBudgetDTO;
+import com.opinio.crm.entity.BudgetDayAgg;
 import com.opinio.crm.entity.FoodDayAgg;
 import com.opinio.crm.entity.HealthDayAgg;
 import com.opinio.crm.entity.LocationDayAgg;
@@ -27,7 +29,11 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
 
     @Override
     public List<HashMap> orderCountByDate() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -10);
+        Date startDate = cal.getTime();
         Aggregation agg = newAggregation(
+                match(Criteria.where("orderDate").gt(startDate)),
                 group("orderDate").sum("1").as("totalCustomer").sum("noOfOrders").as("totalOrders"),
                 project("totalOrders", "totalCustomer", "orderDate"),
                 sort(Sort.Direction.DESC, "orderDate")
@@ -161,6 +167,23 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
             response.put((String) map.get("productCategory"), (String) map.get("totalOrder"));
         }
         return response;
+    }
+
+    @Override
+    public List<UserLocationBudgetDTO> getUserLocationBudget() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -7);
+        Date startDate = cal.getTime();
+        Aggregation agg = newAggregation(
+                match(Criteria.where("orderDate").gt(startDate)),
+                group("city","budget").count().as("totalCustomer"),
+                project("totalCustomer", "city", "budget")
+        );
+
+        AggregationResults<UserLocationBudgetDTO> groupResults
+                = mongoTemplate.aggregate(agg, BudgetDayAgg.class, UserLocationBudgetDTO.class);
+        List<UserLocationBudgetDTO> result = groupResults.getMappedResults();
+        return result;
     }
 
 }

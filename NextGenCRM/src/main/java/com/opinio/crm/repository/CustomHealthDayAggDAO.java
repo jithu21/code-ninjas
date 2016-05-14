@@ -1,5 +1,6 @@
 package com.opinio.crm.repository;
 
+import com.opinio.crm.dto.UserLocationBudgetDTO;
 import com.opinio.crm.repository.impl.HealthDayAggDAOImpl;
 
 import java.util.HashMap;
@@ -18,4 +19,7 @@ public interface CustomHealthDayAggDAO {
     List<HealthDayAggDAOImpl.OrderByLocation> getLocationBasedOrderCount(int n);
 
     Map<String,String> getOrdersByFoodCategory(int i);
+
+    List<UserLocationBudgetDTO> getUserLocationBudget();
+
 }

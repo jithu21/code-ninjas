@@ -17,6 +17,16 @@ public class BudgetDayAgg {
     private Date orderDate;
     @Indexed
     private BudgetCategory budget;
+    @Indexed
+    private String city;
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     public String getCustId() {
         return custId;

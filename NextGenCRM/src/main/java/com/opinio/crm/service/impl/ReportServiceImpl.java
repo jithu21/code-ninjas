@@ -1,10 +1,13 @@
 package com.opinio.crm.service.impl;
 
+import com.opinio.crm.dto.GenericResponseDTO;
+import com.opinio.crm.dto.UserLocationBudgetDTO;
 import com.opinio.crm.entity.*;
 import com.opinio.crm.repository.*;
 import com.opinio.crm.repository.impl.HealthDayAggDAOImpl;
 import com.opinio.crm.service.ReportService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -93,6 +96,11 @@ public class ReportServiceImpl implements ReportService {
     public Map<String, String> getOrdersByFoodCategory() {
         Map<String, String> map = healthDayAggDAO.getOrdersByFoodCategory(-7);
         return map;
+    }
+
+    @Override
+    public List<UserLocationBudgetDTO> getUserLocationBudget() {
+        return healthDayAggDAO.getUserLocationBudget();
     }
 
 }
