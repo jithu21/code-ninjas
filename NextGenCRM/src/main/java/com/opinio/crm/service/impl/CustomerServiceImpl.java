@@ -6,6 +6,8 @@ import com.opinio.crm.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Vineet on 14/05/16.
  */
@@ -20,6 +22,11 @@ public class CustomerServiceImpl implements CustomerService {
     public void create(Customer customer) {
         customerDAO.save(customer);
 
+    }
+
+    @Override
+    public List<Customer> getCustomers() {
+        return customerDAO.findAll();
     }
 
 

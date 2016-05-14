@@ -23,12 +23,20 @@ public class TestConfiguration {
     @Autowired
     private CustomerService customerService;
 
+    @Autowired
+    DataGenerator dataGenerator;
+
 
     @Test
     public void test() throws IOException {
-        Customer customer=new Customer();
+        Customer customer = new Customer();
         customer.setFirstName("Vineet");
         customerService.create(customer);
+    }
+
+    @Test
+    public void testDataGen() {
+        dataGenerator.generateData();
     }
 
 
