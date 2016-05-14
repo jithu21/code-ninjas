@@ -15,7 +15,7 @@
     {
         // Navigation
         msNavigationServiceProvider.saveItem('apps', {
-            title : 'RHEA DASHBAORD',
+            title : 'OPINIO DASHBAORD',
             group : true,
             weight: 1
         });

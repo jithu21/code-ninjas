@@ -25,7 +25,7 @@
             }
         });
       msNavigationServiceProvider.saveItem('fuse.users', {
-        title : 'User Management',
+        title : 'Customer Management',
         icon  : 'icon-account-multiple',
         state : 'app.user'
       });

@@ -20,7 +20,7 @@
         });
 
       msNavigationServiceProvider.saveItem('fuse.rules', {
-        title : 'Rules',
+        title : 'Campaigns',
         icon  : 'icon-filter',
         state : 'app.rules'
       });
