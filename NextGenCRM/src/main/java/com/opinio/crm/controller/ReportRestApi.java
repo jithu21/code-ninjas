@@ -61,5 +61,11 @@ public class ReportRestApi {
         return new ResponseEntity(reportService.getActiveCustomerCount(), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/ordersByFoodCategory", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity getOrdersByFoodCategory(){
+        return new ResponseEntity(reportService.getOrdersByFoodCategory(), HttpStatus.OK);
+    }
+
 
 }

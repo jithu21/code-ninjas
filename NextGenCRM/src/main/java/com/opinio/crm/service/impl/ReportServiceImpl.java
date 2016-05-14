@@ -70,5 +70,10 @@ public class ReportServiceImpl implements ReportService {
         return map;
     }
 
+    @Override
+    public Map<String, String> getOrdersByFoodCategory() {
+        Map<String, String> map = healthDayAggDAO.getOrdersByFoodCategory(-7);
+        return map;
+    }
 
 }

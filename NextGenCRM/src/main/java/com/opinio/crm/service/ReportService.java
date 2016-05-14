@@ -21,4 +21,6 @@ public interface ReportService {
     Map<String, String> getCustomerOrderCount();
 
     Map<String, String> getActiveCustomerCount();
+
+    Map<String, String> getOrdersByFoodCategory();
 }

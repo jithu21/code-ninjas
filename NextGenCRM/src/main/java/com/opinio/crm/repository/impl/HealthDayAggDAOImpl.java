@@ -1,5 +1,6 @@
 package com.opinio.crm.repository.impl;
 
+import com.opinio.crm.entity.FoodDayAgg;
 import com.opinio.crm.entity.HealthDayAgg;
 import com.opinio.crm.repository.CustomHealthDayAggDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,4 +57,29 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
         return ((Integer) result.get(0).get("totalCustomer"));
 
     }
+
+    @Override
+    public Map<String,String> getOrdersByFoodCategory(int n){
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, n);
+        Date startDate = cal.getTime();
+        Aggregation agg = newAggregation(
+                match(Criteria.where("orderDate").gt(startDate)),
+                group("productCategory").count().as("totalOrder"),
+                project("totalOrder", "productCategory"),
+                sort(Sort.Direction.DESC, "orderDate")
+
+        );
+
+        AggregationResults<HashMap> groupResults
+                = mongoTemplate.aggregate(agg, FoodDayAgg.class, HashMap.class);
+        List<HashMap> result = groupResults.getMappedResults();
+        Map<String,String> response = new HashMap<>();
+
+        for(Map map : result){
+            response.put((String)map.get("productCategory"),(String)map.get("totalOrder"));
+        }
+        return response;
+    }
+
 }
