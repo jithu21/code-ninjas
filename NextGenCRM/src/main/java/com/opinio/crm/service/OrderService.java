@@ -14,4 +14,6 @@ public interface OrderService {
     Order getOrder(String id);
 
     void delete(Order order);
+
+    void deleteAll();
 }

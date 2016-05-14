@@ -13,4 +13,6 @@ public interface CustomerService {
     void create(Customer customer);
 
     List<Customer> getCustomers();
+
+    void deleteAll();
 }

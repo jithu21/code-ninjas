@@ -29,5 +29,10 @@ public class CustomerServiceImpl implements CustomerService {
         return customerDAO.findAll();
     }
 
+    @Override
+    public void deleteAll(){
+        customerDAO.deleteAll();
+    }
+
 
 }

@@ -16,4 +16,6 @@ public interface ProductService {
     void delete(Product product);
 
     java.util.List<Product> getProducts();
+
+    void deleteAll();
 }

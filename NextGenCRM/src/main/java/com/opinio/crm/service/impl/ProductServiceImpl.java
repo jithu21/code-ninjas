@@ -38,9 +38,15 @@ public class ProductServiceImpl implements ProductService {
     public void delete(Product product) {
         productDAO.delete(product);
     }
+
     @Override
-    public java.util.List<Product> getProducts(){
+    public java.util.List<Product> getProducts() {
         return productDAO.findAll();
     }
 
+
+    @Override
+    public void deleteAll() {
+        productDAO.deleteAll();
+    }
 }
