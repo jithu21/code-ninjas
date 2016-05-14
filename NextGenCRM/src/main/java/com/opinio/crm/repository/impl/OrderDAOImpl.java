@@ -7,8 +7,10 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.springframework.data.mongodb.core.aggregation.AggregationResults;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Repository;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -25,7 +27,11 @@ public class OrderDAOImpl implements CustomOrderDAO {
 
     @Override
     public List<Order> getDayAggByTotalAmount() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        Date startDate = cal.getTime();
         Aggregation agg = newAggregation(
+                match(Criteria.where("orderDate").gt(startDate)),
                 group("customerId", "orderDate").sum("totalPrice").as("total"),
                 project("customerId", "orderDate", "total"),
                 sort(Sort.Direction.DESC, "orderDate")
@@ -40,7 +46,11 @@ public class OrderDAOImpl implements CustomOrderDAO {
 
     @Override
     public List<FoodDayAgg> getDayAggByFood() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        Date startDate = cal.getTime();
         Aggregation agg = newAggregation(
+                match(Criteria.where("orderDate").gt(startDate)),
                 group("productInfoList.productCategory", "customerId", "orderDate"),
                 project("productInfoList.productCategory", "customerId", "orderDate"),
                 sort(Sort.Direction.DESC, "orderDate")
@@ -90,7 +100,11 @@ public class OrderDAOImpl implements CustomOrderDAO {
 
     @Override
     public List<SatisfactionDayAgg> getDayAggBySatisfaction() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        Date startDate = cal.getTime();
         Aggregation agg = newAggregation(
+                match(Criteria.where("orderDate").gt(startDate)),
                 group("customerId", "orderDate").avg("customerRating").as("customerRating"),
                 project("customerId", "orderDate", "customerRating"),
                 sort(Sort.Direction.DESC, "orderDate")
@@ -105,7 +119,11 @@ public class OrderDAOImpl implements CustomOrderDAO {
 
     @Override
     public List<HealthDayAgg> getDayAggByHealth() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        Date startDate = cal.getTime();
         Aggregation agg = newAggregation(
+                match(Criteria.where("orderDate").gt(startDate)),
                 group("customerId", "orderDate").count().as("noOfOrders"),
                 project("customerId", "orderDate", "noOfOrders"),
                 sort(Sort.Direction.DESC, "orderDate")
@@ -120,7 +138,11 @@ public class OrderDAOImpl implements CustomOrderDAO {
 
     @Override
     public List<LocationDayAgg> getDayAggByLocation() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        Date startDate = cal.getTime();
         Aggregation agg = newAggregation(
+                match(Criteria.where("orderDate").gt(startDate)),
                 group("customerId", "city", "area", "orderDate"),
                 project("customerId", "city", "area", "orderDate"),
                 sort(Sort.Direction.DESC, "orderDate")
