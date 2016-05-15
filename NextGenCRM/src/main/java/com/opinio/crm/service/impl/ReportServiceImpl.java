@@ -56,8 +56,8 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public Map<String, String> getCustomerOrderCount() {
-        return (Map<String, String>) healthDayAggDAO.orderCountByDate();
+    public List<HashMap> getCustomerOrderCount() {
+        return healthDayAggDAO.orderCountByDate();
     }
 
     @Override

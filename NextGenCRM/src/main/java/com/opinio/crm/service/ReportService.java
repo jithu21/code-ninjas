@@ -7,6 +7,7 @@ import com.opinio.crm.entity.*;
 import com.opinio.crm.repository.impl.HealthDayAggDAOImpl;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,7 +21,7 @@ public interface ReportService {
     List<SatisfactionDayAgg> getCustomerSatisfaction(Date fromDate, Date toDate);
     List<BudgetDayAgg> getCustomerBudget(Date fromDate, Date toDate);
 
-    Map<String, String> getCustomerOrderCount();
+    List<HashMap> getCustomerOrderCount();
 
     Map<String, String> getActiveCustomerCount();
 

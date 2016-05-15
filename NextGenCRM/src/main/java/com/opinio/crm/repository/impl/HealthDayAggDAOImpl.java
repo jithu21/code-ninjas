@@ -35,10 +35,9 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
         Date startDate = cal.getTime();
         Aggregation agg = newAggregation(
                 match(Criteria.where("orderDate").gt(startDate)),
-                group("orderDate").sum("1").as("totalCustomer").sum("noOfOrders").as("totalOrders"),
+                group("orderDate").count().as("totalCustomer").sum("noOfOrders").as("totalOrders"),
                 project("totalOrders", "totalCustomer", "orderDate"),
                 sort(Sort.Direction.DESC, "orderDate")
-
         );
 
         AggregationResults<HashMap> groupResults
