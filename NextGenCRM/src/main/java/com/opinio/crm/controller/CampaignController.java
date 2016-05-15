@@ -16,6 +16,7 @@ import static org.springframework.http.ResponseEntity.ok;
  */
 
 @RestController("/campaign")
+@CrossOrigin
 public class CampaignController {
     @Autowired
     private CampaignService campaignService;

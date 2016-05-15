@@ -152,8 +152,8 @@ public class HealthDayAggDAOImpl implements CustomHealthDayAggDAO {
         Date startDate = cal.getTime();
         Aggregation agg = newAggregation(
                 match(Criteria.where("orderDate").gt(startDate)),
-                group("city", "area").count().as("totalOrders"),
-                project("city", "area", "totalOrders")
+                group("city").count().as("totalOrders"),
+                project("totalOrders").and("city").previousOperation()
         );
 
         AggregationResults<OrderByLocation> groupResults
