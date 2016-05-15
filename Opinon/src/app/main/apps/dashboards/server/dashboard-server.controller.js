@@ -13,7 +13,7 @@
 
 
 
-      vm.insert_event= function(time,user_id,event, event_type, product_id, price, phrase, order_id) {
+      vm.customer_oprders= function(time,user_id,event, event_type, product_id, price, phrase, order_id) {
         $http({
           method: 'GET',
           url: '',
@@ -28,7 +28,62 @@
         }).error(function (data, status, headers, config) {
 
         });
-      }
+      };
+
+
+      vm.total_customers= function(time,user_id,event, event_type, product_id, price, phrase, order_id) {
+        $http({
+          method: 'GET',
+          url: '',
+          headers: {
+            'content-type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description'
+          }
+        }).success(function (data) {
+          if (data) {
+
+          }
+        }).error(function (data, status, headers, config) {
+
+        });
+      };
+
+      vm.campaigns= function(time,user_id,event, event_type, product_id, price, phrase, order_id) {
+        $http({
+          method: 'GET',
+          url: '',
+          headers: {
+            'content-type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description'
+          }
+        }).success(function (data) {
+          if (data) {
+
+          }
+        }).error(function (data, status, headers, config) {
+
+        });
+      };
+
+      vm.activity_orders= function(time,user_id,event, event_type, product_id, price, phrase, order_id) {
+        $http({
+          method: 'GET',
+          url: '',
+          headers: {
+            'content-type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description'
+          }
+        }).success(function (data) {
+          if (data) {
+
+          }
+        }).error(function (data, status, headers, config) {
+
+        });
+      };
+
+
+
 
         // Data
         vm.dashboardData = DashboardData;
