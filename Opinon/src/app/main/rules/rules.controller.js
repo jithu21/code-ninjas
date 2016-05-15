@@ -22,12 +22,25 @@
 
       // method to fetch varities under category items
 
-        vm.fetchVarirties = function () {
-          vm.varityItems = [{"variety_name":"varity1"},{"variety_name":"varity2"},{"variety_name":"varity3"}];
+        vm.fetchVarirties = function (user) {
+          vm.varityItems=[];
+          if(user.name == "Location"){
+            vm.varityItems = [{"variety_name":"HSR LAYOUT"},{"variety_name":"SILK BOARD"},{"variety_name":"MARTHALLI"}];
+          }
+          if(user.name == "Food"){
+            vm.varityItems = [{"variety_name":"North Indian Food"},{"variety_name":"South Indian Food"},{"variety_name":"Punjabi"},{"variety_name":"Kolkatta Foods"},{"variety_name":"Andhra Foods"}];
+          }
+          if(user.name == "Active"){
+            vm.varityItems = [{"variety_name":"Area Wise "},{"variety_name":"State Wise"},{"variety_name":"Region Wise"},{"variety_name":"BlockWise"},{"variety_name":"Colony Wise"}];
+          }
+          if(user.name == "Inactive"){
+            vm.varityItems = [{"variety_name":"Area Wise "},{"variety_name":"State Wise"},{"variety_name":"Region Wise"},{"variety_name":"BlockWise"},{"variety_name":"Colony Wise"}];
+          }
         }
 
+
         vm.listCountries = function(){
-          vm.countries = [{"name":"Gujarat"},{"name":"Pakistan"},{"name":"China"}];
+          vm.countries = [{"name":"Gujarat"},{"name":"Pakistan"},{"name":"China"},{"name":"India"},{"name":"Bangladesh"}];
         }
         vm.listTypeofUsers=function(){
           vm.userType = [{"type":"List1"},{"type":"List2"},{"type":"List3"},{"type":"List5"},{"type":"List6"},{"type":"List7"}];

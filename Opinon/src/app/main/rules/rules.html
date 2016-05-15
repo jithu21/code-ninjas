@@ -42,7 +42,7 @@
                   </md-input-container>
 
                   <md-input-container flex="100" flex-gt-xs="30">
-                    <md-select placeholder="Compaign Variety" ng-model="varity" ng-click="vm.fetchVarirties($event)" style="min-width: 200px;">
+                    <md-select placeholder="Compaign Variety" ng-model="varity" ng-click="vm.fetchVarirties(user)" style="min-width: 200px;">
                       <md-option ng-value="varity" ng-repeat="varity in vm.varityItems">{{varity.variety_name}}</md-option>
                       </md-select>
                       <p class="md-caption">Variety Selected : {{ varity ? varity.variety_name : 'No Campaign Selected' }}</p>
@@ -97,16 +97,13 @@
                 </div>
 
                 <md-input-container class="md-block">
-                  <label>Address/Locality/Landmark</label>
+                  <label>Offer Code</label>
                                     <textarea ng-model="vm.formWizard.address" columns="1" md-maxlength="150"
                                               rows="5" required></textarea>
                   <div ng-messages="wizardStep2.address.$error"
                        ng-show="wizardStep2.address.$touched"
                        role="alert" multiple>
-                    <div ng-message="required"><span>Address/Locality/Landmark field is required.</span></div>
-                    <div ng-message="md-maxlength">
-                      <span>Address can't be longer than 150 characters.</span>
-                    </div>
+                    <div ng-message="required"><span>Offer Code.</span></div>
                   </div>
                 </md-input-container>
               </form>
