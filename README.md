@@ -1,7 +1,7 @@
 # code-ninjas
 
 
-We are building a tool to help  the Customer Relationship Manager to target right customers for there new promotions and offers. The tool helps the CRM to run campaigns based on different categories like food, location and other aspects. We buid this assuming that we have the complete customer database ie. (Customer,Order and Product)
+We are building a tool to help  the Customer Relationship Manager to target right customers for there new promotions and offers. The tool helps the CRM to run campaigns based on different categories like food, location and other aspects. We built this assuming that we have the complete customer database ie. (Customer,Order and Product) information for our reporting and analysis.
 
 Tech Stack
 
