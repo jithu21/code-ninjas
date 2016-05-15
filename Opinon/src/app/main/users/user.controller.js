@@ -11,7 +11,80 @@
     {
         var vm = this;
 
-        // Data
+
+      vm.orders_food= function(time,user_id,event, event_type, product_id, price, phrase, order_id) {
+        $http({
+          method: 'GET',
+          url: '',
+          headers: {
+            'content-type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description'
+          }
+        }).success(function (data) {
+          if (data) {
+
+          }
+        }).error(function (data, status, headers, config) {
+
+        });
+      };
+
+      vm.orders_location= function(time,user_id,event, event_type, product_id, price, phrase, order_id) {
+        $http({
+          method: 'GET',
+          url: '',
+          headers: {
+            'content-type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description'
+          }
+        }).success(function (data) {
+          if (data) {
+
+          }
+        }).error(function (data, status, headers, config) {
+
+        });
+      };
+
+
+
+      vm.promotions_food= function(time,user_id,event, event_type, product_id, price, phrase, order_id) {
+        $http({
+          method: 'GET',
+          url: '',
+          headers: {
+            'content-type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description'
+          }
+        }).success(function (data) {
+          if (data) {
+
+          }
+        }).error(function (data, status, headers, config) {
+
+        });
+      };
+
+
+      vm.promotions_location= function(time,user_id,event, event_type, product_id, price, phrase, order_id) {
+        $http({
+          method: 'GET',
+          url: '',
+          headers: {
+            'content-type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description'
+          }
+        }).success(function (data) {
+          if (data) {
+
+          }
+        }).error(function (data, status, headers, config) {
+
+        });
+      };
+
+
+      // Data
         vm.users = [ { name:"Jithendra", "role":"Admin", "createdBy":"Jithendra", "createdAt":"2015/12/21"},
           { name:"Prasath", "role":"Admin", "createdBy":"Jithendra", "createdAt":"2015/12/22"},
           { name:"Vivek", "role":"User", "createdBy":"Jithendra", "createdAt":"2015/12/22"},
