@@ -7,9 +7,28 @@
         .controller('DashboardServerController', DashboardServerController);
 
     /** @ngInject */
-    function DashboardServerController($scope, $interval, DashboardData)
+    function DashboardServerController($scope, $interval, DashboardData, $http)
     {
         var vm = this;
+
+
+
+      vm.insert_event= function(time,user_id,event, event_type, product_id, price, phrase, order_id) {
+        $http({
+          method: 'GET',
+          url: '',
+          headers: {
+            'content-type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description'
+          }
+        }).success(function (data) {
+          if (data) {
+
+          }
+        }).error(function (data, status, headers, config) {
+
+        });
+      }
 
         // Data
         vm.dashboardData = DashboardData;

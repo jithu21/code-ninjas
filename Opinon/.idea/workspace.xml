@@ -6,6 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/index.config.js" afterPath="$PROJECT_DIR$/src/app/index.config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/index.route.js" afterPath="$PROJECT_DIR$/src/app/index.route.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/apps/dashboards/dashboards.module.js" afterPath="$PROJECT_DIR$/src/app/main/apps/dashboards/dashboards.module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.controller.js" afterPath="$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.html" afterPath="$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.module.js" afterPath="$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.module.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main/login/login.html" afterPath="$PROJECT_DIR$/src/app/main/login/login.html" />
@@ -46,16 +47,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.module.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/main/login/login.module.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="s3.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/main/s3/s3.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -80,14 +71,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/main/users/user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5720588">
-              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+            <state vertical-scroll-proportion="-15.583333">
+              <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
               <folding>
                 <marker date="1463284377000" expanded="true" signature="114:741" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard-server.controller.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42613637">
+              <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,6 +184,7 @@
         <option value="$PROJECT_DIR$/src/app/main/s3/S3.controller.js" />
         <option value="$PROJECT_DIR$/src/app/main/sample/sample.module.js" />
         <option value="$PROJECT_DIR$/src/app/main/users/user.html" />
+        <option value="$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.controller.js" />
       </list>
     </option>
   </component>
@@ -641,14 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/apps/dashboards/project/dashboard-project.module.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -910,11 +904,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/main/users/user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5720588">
-          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+        <state vertical-scroll-proportion="-15.583333">
+          <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
           <folding>
             <marker date="1463284377000" expanded="true" signature="114:741" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/main/apps/dashboards/server/dashboard-server.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42613637">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
