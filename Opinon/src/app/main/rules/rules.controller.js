@@ -49,6 +49,14 @@
           vm.schduleType = [{"type":"Run Now"},{"type":"Run Weekly"},{"type":"Run Monthly"},{"type":"Run Everyday"},{"type":"Custom Schdule"}]
         }
 
+        vm.myDate =   new Date();
+
+        vm.sendForm = function(){
+          alert("CAMPAIGN SAVED AND SCHEDULED");
+          location.reload();
+        }
+
+
     }
 
 })();
