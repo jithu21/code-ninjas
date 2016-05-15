@@ -32,8 +32,8 @@ public class OrderDAOImpl implements CustomOrderDAO {
         Date startDate = cal.getTime();
         Aggregation agg = newAggregation(
                 match(Criteria.where("orderDate").gt(startDate)),
-                group("customerId", "orderDate").sum("totalPrice").as("total"),
-                project("customerId", "orderDate", "total"),
+                group("customerId", "orderDate", "city").sum("totalPrice").as("total"),
+                project("customerId", "orderDate", "total", "city"),
                 sort(Sort.Direction.DESC, "orderDate")
 
         );

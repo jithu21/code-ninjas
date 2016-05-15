@@ -38,16 +38,16 @@ public class TestConfiguration {
 
     @Autowired
     ReportService reportService;
-    @Test
+   /* @Test
     public void testDataGen() {
-        //dataGenerator.cleanData();
-        //dataGenerator.generateData();
-    }
+        dataGenerator.cleanData();
+        dataGenerator.generateData();
+    }*/
     @Test
     public void testAggregation() {
-        //aggregationService.runAggregation(AggregationType.CUST_LOCATION);
+        aggregationService.runAggregation(AggregationType.BUDGET);
 
-        reportService.getHealthBasedOnLocation();
+        //reportService.getHealthBasedOnLocation();
 
         //aggregationService.runAggregation(AggregationType.FOOD_ORDERED);
 

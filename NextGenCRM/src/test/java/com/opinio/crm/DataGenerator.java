@@ -51,9 +51,9 @@ public class DataGenerator {
 
 
     public void generateData() {
-        //IntStream.range(1, 100).forEach(i -> customerService.create(getCustomer()));
+        IntStream.range(1, 100).forEach(i -> customerService.create(getCustomer()));
         this.initCustomers();
-        //IntStream.range(1, 12).forEach(i -> productService.save(getProduct()));
+        IntStream.range(1, 12).forEach(i -> productService.save(getProduct()));
         this.initProducts();
         IntStream.range(1, 1000).forEach(i -> orderService.save(getOrder()));
 
