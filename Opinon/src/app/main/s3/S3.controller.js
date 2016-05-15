@@ -7,7 +7,7 @@
         .controller('S3Controller', FormsController);
 
     /** @ngInject */
-    function FormsController($mdDialog,$scope,$compile)
+    function FormsController($mdDialog,$scope,$compile,$http)
     {
         var vm = this;
 
@@ -175,6 +175,7 @@
         }).error(function (data, status, headers, config) {
 
         });
+
       };
 
         function showS3(){
@@ -254,17 +255,58 @@
         responsive: true
       };
 
-      vm.lineChart = {
-        labels: ['Karnataka', 'Maharastra', 'Kerala', 'Andhra Pradesh', 'Telangana'],
-        series: ['Top', 'Middle', 'Low'],
-        data  : [
-          [65, 59, 80, 81, 56, 55, 40],
-          [28, 48, 40, 19, 86, 27, 90],
-          [20, 43, 50, 19, 46, 7, 80]
-        ]
+
+
+      vm.customer_slab= customer_slab;
+
+      function customer_slab() {
+        $http({
+          method: 'GET',
+          url: 'http://172.31.98.153:8080/userLocationBudget',
+          headers: {
+            'content-type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description'
+          }
+        }).success(function (data) {
+          if (data) {
+            var labels=[];
+            var series=[];
+            var s1=[];
+            for( var i =0 ; i <data.length; i++){
+               if(!(data[i].city in labels)){
+                 labels.push(data[i].city);
+               }
+              if(!(data[i].budget in series)){
+                series.push(data[i].budget);
+              }
+
+              s1.push([data[i].totalCustomer]);
+            }
+            //vm.lineChart ={
+            //  labels :labels,
+            //  series :series,
+            //  data :s1
+            //}
+            vm.lineChart = {
+              labels: ['Karnataka', 'Maharastra', 'Kerala', 'Andhra Pradesh', 'Telangana'],
+              series: ['Top', 'Middle', 'Low'],
+              data  : [
+                [65, 59, 80, 81, 56, 55, 40],
+                [28, 48, 40, 19, 86, 27, 90],
+                [20, 43, 50, 19, 46, 7, 80]
+              ]
+            };
+
+          }
+        }).error(function (data, status, headers, config) {
+
+        });
       };
 
-        // Methods
+
+      vm.customer_slab();
+
+      // Methods
         vm.sendForm = sendForm;
 
         //////////

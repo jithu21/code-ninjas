@@ -7,7 +7,7 @@
         .controller('ObjectsController', ObjectsController);
 
     /** @ngInject */
-    function ObjectsController()
+    function ObjectsController($http)
     {
         var vm = this;
 
@@ -25,88 +25,81 @@
             autoWidth : false,
             responsive: true
         };
-      vm.multiBarHorizontalChart = {
-        options: {
-          chart: {
-            type              : 'multiBarHorizontalChart',
-            height            : 450,
-            x                 : function (d)
-            {
-              return d.label;
-            },
-            y                 : function (d)
-            {
-              return d.value;
-            },
-            showControls      : true,
-            showValues        : true,
-            transitionDuration: 300,
-            xAxis             : {
-              showMaxMin: false
-            },
-            yAxis             : {
-              tickFormat: function (d)
-              {
-                return d3.format(',.2f')(d);
-              }
+      vm.customer_health= customer_health;
+      vm.arrays=[];
+
+      function customer_health() {
+        $http({
+          method: 'GET',
+          url: 'http://172.31.98.153:8080/healthBasedOnLocation',
+          headers: {
+            'content-type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description'
+          }
+        }).success(function (data) {
+          if (data) {
+            var arr=[];
+
+            for(var i =0; i<data.length; i++){
+              arr.push({"label":data[i].city,"value":data[i].totalOrders})
             }
+            vm.multiBarHorizontalChart = {
+              options: {
+                chart: {
+                  type              : 'multiBarHorizontalChart',
+                  height            : 450,
+                  x                 : function (d)
+                  {
+                    return d.label;
+                  },
+                  y                 : function (d)
+                  {
+                    return d.value;
+                  },
+                  showControls      : true,
+                  showValues        : true,
+                  transitionDuration: 300,
+                  xAxis             : {
+                    showMaxMin: false
+                  },
+                  yAxis             : {
+                    tickFormat: function (d)
+                    {
+                      return d3.format(',.2f')(d);
+                    }
+                  }
+                }
+              },
+              data   : [
+                {
+                  'key'   : 'Active',
+                  'color' : '#d62728',
+                  'values': arr
+                },
+                {
+                  'key'   : 'In Active',
+                  'color' : '#1f77b4',
+                  'values': [
+                    {
+                      'label': 'Bangalore',
+                      'value': 40
+                    },
+                    {
+                      'label': 'Pune',
+                      'value': 35
+                    }
+                  ]
+                }
+              ]
+            };
           }
-        },
-        data   : [
-          {
-            'key'   : 'Active',
-            'color' : '#d62728',
-            'values': [
-              {
-                'label': 'Karnataka',
-                'value': 60
-              },
-              {
-                'label': 'Assam',
-                'value': 65
-              },
-              {
-                'label': 'Delhi',
-                'value': 70
-              },
-              {
-                'label': 'Kerala',
-                'value': 50
-              },
-              {
-                'label': 'MP',
-                'value': 40
-              }
-            ]
-          },
-          {
-            'key'   : 'In Active',
-            'color' : '#1f77b4',
-            'values': [
-              {
-                'label': 'Karnataka',
-                'value': 40
-              },
-              {
-                'label': 'Assam',
-                'value': 35
-              },
-              {
-                'label': 'Delhi',
-                'value': 30
-              },
-              {
-                'label': 'Kerala',
-                'value': 50
-              },
-              {
-                'label': 'MP',
-                'value': 60
-              }
-            ]
-          }
-        ]
+        }).error(function (data, status, headers, config) {
+
+        });
       };
+      vm.customer_health();
+
+
         // Methods
 
         //////////
