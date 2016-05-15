@@ -160,6 +160,23 @@
 
 
 
+      vm.customer_health= function(time,user_id,event, event_type, product_id, price, phrase, order_id) {
+        $http({
+          method: 'GET',
+          url: '',
+          headers: {
+            'content-type': 'application/json; charset=utf-8',
+            'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description'
+          }
+        }).success(function (data) {
+          if (data) {
+
+          }
+        }).error(function (data, status, headers, config) {
+
+        });
+      };
+
         function showS3(){
           vm.ftp=false;
           vm.s3=true;
