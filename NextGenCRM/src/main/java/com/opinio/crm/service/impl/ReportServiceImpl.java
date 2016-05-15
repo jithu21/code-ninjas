@@ -64,9 +64,11 @@ public class ReportServiceImpl implements ReportService {
     public Map<String, String> getActiveCustomerCount() {
         int countlast7Days = healthDayAggDAO.getActiveCustomerCount(-7);
         int countlast14Days = healthDayAggDAO.getActiveCustomerCount(-14);
+        int activeUsers = countlast7Days;
+        int inActiveUsers = countlast14Days - countlast7Days;
         Map<String, String> map = new HashMap<>();
-        map.put("Last7Days", countlast7Days + "");
-        map.put("Last14Days", countlast14Days + "");
+        map.put("activeUsers", activeUsers + "");
+        map.put("inActiveUsers", inActiveUsers + "");
         return map;
     }
 
